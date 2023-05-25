@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MonevController;
 use App\Http\Controllers\PtbController;
 use App\Http\Controllers\ProfileController;

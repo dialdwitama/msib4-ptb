@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreMonevRequest;
-use App\Http\Requests\UpdateMonevRequest;
+use App\Http\Requests\StorePtbRequest;
+use App\Http\Requests\UpdatePtbRequest;
 use App\Models\Ptb;
 use Illuminate\Http\Request;
 

@@ -27,16 +27,16 @@ final class StorePtbRequest extends FormRequest
             'kode' => ['required', 'string', 'max:255', 'unique:ptbs,kode'],
             'pt' => ['required', 'string', 'max:255'],
             'progressTerakhir' => ['required', 'string'],
+            'status' => ['required', 'string'],
             'tgl' => ['required', 'date'],
             'deadline' => ['required', 'date'],
-            'status' => ['required', 'string'],
+            'permintaan' => ['required', 'string'],
             'progressReport' => ['required', 'string'],
             'pic' => ['required', 'string'],
-            'permintaan' => ['required', 'string'],
             'kegiatan' => ['required', 'string'],
             'hasil_keg' => ['required', 'string'],
             'lampiran' => ['required', 'string'],
-            'ket' => ['required', 'string'],
+            'ket' => ['string', 'nullable'],
         ];
     }
 }
