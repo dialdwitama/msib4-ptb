@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-10xl mx-auto sm:px-6 lg:px-8">
             <!-- Table Section -->
             @if($ptbs->count() > 0 || $keyword != '')
             <div class="max-w-[85rem] mx-auto">
@@ -90,7 +90,7 @@
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                               href="{{route('ptbs.index', ['sort' => 'nama_pt'])}}">
+                                               href="{{route('ptbs.index', ['sort' => 'pt'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                   Nama Perguruan Tinggi
@@ -115,7 +115,7 @@
                                                href="{{route('ptbs.index', ['sort' => 'tgl'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Tanggal PTB
+                                                  Tanggal Progress Terakhir
                                                 </span>
                                                 <div
                                                     class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
@@ -132,13 +132,30 @@
                                             </a>
                                         </th>
 
+                                        <th scope="col" class="px-9 py-3 text-left">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  Deadline
+                                            </span>
+                                        </th>
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Permasalahan
+                                                  Status
                                             </span>
                                         </th>
-
+                                        <th scope="col" class="px-9 py-3 text-left">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  Progress Terakhir
+                                            </span>
+                                        </th>
+                                        <th scope="col" class="px-9 py-3 text-left">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  PIC
+                                            </span>
+                                        </th>
                                         <th scope="col" class="px-6 py-3 text-right"></th>
                                     </tr>
                                     </thead>
@@ -181,17 +198,51 @@
                                                 <a class="block relative z-10"
                                                    href="{{route('ptbs.show', $ptb->id)}}">
                                                     <div class="px-6 py-2">
-                                                        <p class="text-sm text-gray-500">{{\Carbon\Carbon::make($ptb->tgl)->toDateString()}}</p>
+                                                        <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{\Carbon\Carbon::make($ptb->tgl)->toDateString()}}</p>
                                                     </div>
                                                 </a>
                                             </td>
-                                            <td class="h-px w-72 min-w-[18rem]">
+                                            <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
                                                    href="{{route('ptbs.show', $ptb->id)}}">
                                                     <div class="px-6 py-2">
-                                                        <p class="text-sm text-gray-500">
-                                                            {!! nl2br(e($monev->permasalahan)) !!}
-                                                        </p>
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->deadline}}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-6 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->status}}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-6 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->progressTerakhir}}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-6 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->pic}}
+                                                      </span>
                                                     </div>
                                                 </a>
                                             </td>
@@ -217,16 +268,16 @@
                                                             Aksi
                                                           </span>
                                                                 <a class="flex items-center gap-x-3 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                                                   href="{{route('monevs.show', $monev->id)}}">
+                                                                   href="{{route('ptbs.show', $ptb->id)}}">
                                                                     Lihat
                                                                 </a>
                                                                 <a class="flex items-center gap-x-3 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                                                   href="{{route('monevs.edit', $monev->id)}}">
+                                                                   href="{{route('ptbs.edit', $ptb->id)}}">
                                                                     Edit
                                                                 </a>
                                                             </div>
                                                             <div class="py-2 first:pt-0 last:pb-0">
-                                                                <form action="{{route('monevs.destroy', $monev->id)}}"
+                                                                <form action="{{route('ptbs.destroy', $ptb->id)}}"
                                                                       method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -254,14 +305,14 @@
                                     <div>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
                                             <span
-                                                class="font-semibold text-gray-800 dark:text-gray-200">{{$monevs->count()}}</span>
+                                                class="font-semibold text-gray-800 dark:text-gray-200">{{$ptbs->count()}}</span>
                                             results
                                         </p>
                                     </div>
 
                                     <div>
                                         <div class="inline-flex space-x-2">
-                                            {{$monevs->links()}}
+                                            {{$ptbs->links()}}
                                         </div>
                                     </div>
                                 </div>
@@ -285,10 +336,10 @@
                                     <!-- Header -->
                                     <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
                                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                                            Data Monev
+                                            Data PTB
                                         </h2>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
-                                            Tambahkan, hapus, dan edit data monev.
+                                            Tambahkan, hapus, dan edit data PTB.
                                         </p>
                                     </div>
                                     <!-- End Header -->
@@ -309,16 +360,16 @@
                                         </div>
 
                                         <h2 class="mt-5 font-semibold text-gray-800 dark:text-white">
-                                            Tidak ada data monev saat ini.
+                                            Tidak ada data PTB saat ini.
                                         </h2>
 
                                         <div class="mt-5 grid sm:flex gap-2">
-                                            <a href="{{route('monevs.create')}}"
+                                            <a href="{{route('ptbs.create')}}"
                                                class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
-                                                Tambahkan Data Monev
+                                                Tambahkan Data PTB
                                             </a>
                                         </div>
                                     </div>

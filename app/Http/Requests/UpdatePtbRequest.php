@@ -5,6 +5,11 @@ declare(strict_types=1);
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Auth;
+use Hashids;
+use Redirect;
+use Request;
+use Hash;
 
 final class UpdatePtbRequest extends FormRequest
 {

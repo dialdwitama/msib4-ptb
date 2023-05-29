@@ -1,13 +1,13 @@
 # Sistem Informasi PTB
 
 Sistem Informasi Perguruan Tinggi Bermasalah (PTB) adalah sebuah sistem informasi yang digunakan untuk mengelola data
-mahasiswa yang berasal dari perguruan tinggi bermasalah. Sistem ini dibuat untuk memenuhi tugas mata kuliah Pemrograman
-Berorientasi Objek.
+Perguran Tinggi Bermasalah dan Rekapitulasi Monev
 
 ## Tech Stack
-- Laravel 10
-- Tailwind CSS
-- Alpine JS
-- PHP ^8
-- PostgreSQL
-- Composer
+- Lakukan git clone https://github.com/dialdwitama/msib4-ptb
+- Ketik composer install
+- Setelah itu ketik npm install
+- Copy file .env.example dan ubah menjadi .env
+- Lakukan perintah php artisan:key generate
+- Lakukan migrasi dengan cara php artisan migrate -seed
+- Setelah itu jalankan laravel dengan php artisan serve (berbarengan dengan npm run dev)

@@ -7,7 +7,7 @@ namespace App\Policies;
 use App\Models\Ptb;
 use App\Models\User;
 
-final class MonevPolicy
+final class PtbPolicy
 {
     /**
      * Determine whether the user can view any models.
