@@ -154,7 +154,7 @@
 				<div class="icon">
 					<i class="fas fa-database"></i>
 				</div>
-				<a href="" class="more-link">
+				<a href="akademiks" class="more-link">
 					Selengkapnya
 					<i class="fas fa-arrow-circle-right"></i>
 				</a>
@@ -165,7 +165,7 @@
 				<div class="icon">
 					<i class="fas fa-book"></i>
 				</div>
-				<a href="" class="more-link">
+				<a href="kemahasiswaans" class="more-link">
 					Selengkapnya
 					<i class="fas fa-arrow-circle-right"></i>
 				</a>
@@ -187,7 +187,7 @@
 				<div class="icon">
 					<i class="fas fa-users-cog"></i>
 				</div>
-				<a href="" class="more-link">
+				<a href="/diktendiks" class="more-link">
 					Selengkapnya
 					<i class="fas fa-arrow-circle-right"></i>
 				</a>
