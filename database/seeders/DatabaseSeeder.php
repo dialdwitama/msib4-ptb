@@ -27,6 +27,9 @@ final class DatabaseSeeder extends Seeder
 
         $this->call([
             MonevSeeder::class,
+            AkademikSeeder::class,
+            DiktendikSeeder::class,
+            KemahasiswaanSeeder::class,
         ]);
     }
 }

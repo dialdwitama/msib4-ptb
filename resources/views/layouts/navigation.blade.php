@@ -32,16 +32,16 @@
                                 </button>
                             </x-slot>
                             <x-slot name="content">
-                            <x-dropdown-link href="#">
+                                <x-dropdown-link :href="route('akademiks.index')">
                                     Akademik
                                 </x-dropdown-link>
-                                <x-dropdown-link href="#">
+                                <x-dropdown-link :href="route('diktendiks.index')">
                                     Diktendik
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('monevs.index')">
                                     Kelembagaan
                                 </x-dropdown-link>
-                                <x-dropdown-link href="#">
+                                <x-dropdown-link :href="route('kemahasiswaans.index')">
                                     Kemahasiswaan
                                 </x-dropdown-link>
                             </x-slot>

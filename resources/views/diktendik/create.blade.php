@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Tambahkan Data PTB
+            Tambahkan Data Monev
         </h2>
     </x-slot>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-10">
         <!-- Form -->
-        <form class="bg-white p-5 rounded-md" action="{{route('ptbs.store')}}" method="POST">
+        <form class="bg-white p-5 rounded-md" action="{{route('diktendiks.store')}}" method="POST">
             @csrf
             <div class="grid gap-2 lg:gap-5">
                 <!-- Grid -->
@@ -20,9 +20,9 @@
                     </div>
 
                     <div>
-                        <label for="pt"
+                        <label for="nama_pt"
                                class="block text-sm text-gray-700 font-medium dark:text-white">Nama PT</label>
-                        <select name="pt" id="pt"
+                        <select name="nama_pt" id="nama_pt"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                                <option value="pilih">-----Silahkan pilih-----</option>
                                <option value="Akademi Kebidanan Bunda Auni Bogor">Akademi Kebidanan Bunda Auni Bogor</option>
@@ -461,87 +461,49 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                     <div>
-                        <label for="progressTerakhir"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
-                        <input type="text" name="progressTerakhir" id="progressTerakhir"
+                        <label for="alamat_monev"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Monev</label>
+                        <input type="text" name="alamat_monev" id="alamat_monev"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
+
                     <div>
-                        <label for="status"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
-                        <select name="status" id="status"
+                        <label for="alamat_direktori"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Direktori</label>
+                        <input type="text" name="alamat_direktori" id="alamat_direktori"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                               <option value="Aman">Aman</option>
-                               <option value="Menunggu Penggabungan">Menunggu Penggabungan</option>
-                               <option value="Menunggu Pelaporan">Menunggu Pelaporan</option>
-                               <option value="Sudah Kedaluwarsa">Sudah Kedaluwarsa</option>
-                               <option value="Sedang Ditindaklanjuti">Sedang Ditindaklanjuti</option>
-                               <option value="Tutup">Tutup</option>
-                        </select>
-                    </div>  
-                    
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-                <div>
-                        <label for="tgl"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal Progress Terakhir</label>
-                        <input type="date" name="tgl" id="tgl"
+                    <div>
+                        <label for="alamat_pddikti"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Alamat PDDIKTI</label>
+                        <input type="text" name="alamat_pddikti" id="alamat_pddikti"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
+
                     <div>
-                        <label for="deadline"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Deadline</label>
-                        <input type="date" name="deadline" id="deadline"
+                        <label for="tanggal_monev"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal Monev</label>
+                        <input type="date" name="tanggal_monev" id="tanggal_monev"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
                 </div>
 
                 <div>
-                    <label for="permintaan" class="block text-sm text-gray-700 font-medium dark:text-white">Permintaan</label>
-                    <textarea id="permintaan" name="permintaan" rows="4"
+                    <label for="permasalahan" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
+                    <textarea id="permasalahan" name="permasalahan" rows="4"
                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"></textarea>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                 <div>
-                    <label for="progressReport"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Progress Report</label>
-                    <input type="text" name="progressReport" id="progressReport"
+                    <label for="hasil_monev"
+                           class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Monev</label>
+                    <input type="text" name="hasil_monev" id="hasil_monev"
                            class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
-                <div>
-                    <label for="pic"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">PIC</label>
-                    <select name="pic" id="pic"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                               <option value="LLDIKTI4">LLDIKTI4</option></select>
                 </div>
             </div>
-            <div>
-                    <label for="kegiatan"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Kegiatan</label>
-                    <input type="text" name="kegiatan" id="kegiatan"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
-                <div>
-                    <label for="hasil_keg"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Kegiatan</label>
-                    <input type="text" name="hasil_keg" id="hasil_keg"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
-                <div>
-                    <label for="lampiran"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Lampiran</label>
-                    <input type="text" name="lampiran" id="lampiran"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
-                <div>
-                    <label for="ket"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Keterangan</label>
-                    <input type="text" name="ket" id="ket"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
             <!-- End Grid -->
 
             <div class="mt-6 grid">
@@ -551,7 +513,7 @@
                 </button>
             </div>
             <div class="mt-5">
-                <a href="{{route('ptbs.index')}}"
+                <a href="{{route('diktendiks.index')}}"
                    class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="w-2.5 h-auto">
