@@ -2,141 +2,155 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <style>
-/* Reset default styles */
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
+    /* Reset default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-	body {
-		font-family: Verdana, sans-serif;
-		background-color: #f2f2f2;
-	}
+    body {
+        font-family: Verdana, sans-serif;
+        background-color: #f2f2f2;
+    }
 
-	.container {
-		max-width: 960px;
-		margin: 0 auto;
-		padding: 20px;
-		background-color: #fff;
-		border: 1px solid #ddd;
-		border-radius: 5px;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	}
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-	header {
-		text-align: center;
-		margin-bottom: 20px;
-	}
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-	nav ul {
-		list-style-type: none;
-		margin-bottom: 20px;
-	}
+    nav ul {
+        list-style-type: none;
+        margin-bottom: 20px;
+    }
 
-	nav ul li {
-		display: inline-block;
-		margin-right: 10px;
-	}
+    nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
 
-	nav ul li a {
-		text-decoration: none;
-		color: #333;
-		padding: 5px 10px;
-		border: 1px solid #ddd;
-		border-radius: 3px;
-	}
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
 
-	section {
-		margin-bottom: 20px;
-	}
+    section {
+        margin-bottom: 20px;
+    }
 
-	.dashboard-info {
-		margin-bottom: 20px;
-	}
+    .dashboard-info {
+        margin-bottom: 20px;
+    }
 
-	.dashboard-widgets {
-		display: flex;
-		justify-content: space-between;
-	}
+    .dashboard-widgets {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-	.widget {
-		flex-basis: 30%;
-		padding: 40px;
-		background-color: white;
-		border: 1px solid #ddd;
-		border-radius: 5px;
-		position: relative;
-	}
+    .widget-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 
-	.widget h3 {
-		margin-bottom: 10px;
-		color: white;
-	}
+    .widget {
+        flex-basis: 40%;
+        /* Lebar widget diatur menjadi 40% agar ada ruang antara widget */
+        /* Ubah sesuai kebutuhan Anda */
+        padding: 40px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        position: relative;
+    }
 
-	.widget p {
-		font-size: 24px;
-		font-weight: bold;
-		color: white;
-	}
+    .widget h3 {
+        color: white;
+    }
 
-	.widget .icon {
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding: 10px;
-		font-size: 48px;
-		color: #888;
-		/*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  Efek bayangan */
-	}
+    .widget p {
+        font-size: 36px;
+        font-weight: bold;
+        color: white;
+    }
 
-	.widget .icon i {
-		display: inline-block;
-		vertical-align: middle;
-	}
+    .widget a {
+        color: white;
+        font-size: 16px;
+    }
 
-	.widget .more-link {
-		position: absolute;
-		bottom: 10px;
-		left: 0;
-		right: 0;
-		margin: auto;
-		color: white;
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-left: 10px;
-	}
+    .widget .icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        font-size: 48px;
+        color: #888;
+        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  Efek bayangan */
+    }
 
-	.widget.akademik {
-	background-color: #228B22; /* Warna untuk widget Akademik */
-	}
+    .widget .icon i {
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-	.widget.kemahasiswaan {
-		background-color: #9932CC; /* Warna untuk widget Kemahasiswaan */
-	}
+    .widget .more-link {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+    }
 
-	.widget.kelembagaan {
-		background-color: #6495ED; /* Warna untuk widget Kelembagaan */
-	}
+    .widget.akademik {
+        background-color: #1C708C;
+        margin-right: 20px;
+    }
 
-	.widget.diktendik {
-		background-color: #FF1493; /* Warna untuk widget Diktendik */
-	}
+    .widget.kemahasiswaan {
+        background-color: #A01E40;
+        margin-left: 20px;
+    }
 
+    .widget.kelembagaan {
+        background-color: #036BDC;
+        margin-right: 20px;
+    }
 
-	footer {
-		text-align: center;
-		padding-top: 20px;
-		border-top: 1px solid #ddd;
-	}
+    .widget.diktendik {
+        background-color: #1F8546;
+        margin-left: 20px;
+    }
 
-/* Responsive Styles */
+    .widget.ptb {
+        background-color: #FFA500;
+    }
+
 </style>
 
 
@@ -146,51 +160,78 @@
             Dashboard
         </h2>
     </x-slot>
-	<section>
+
+    <section>
         <div class="dashboard-widgets">
-            <div class="widget akademik" style="margin-left: 30px;">
-                <h3>AKADEMIK</h3>
-               
-				<div class="icon">
-					<i class="fas fa-database"></i>
-				</div>
-				<a href="" class="more-link">
-					Selengkapnya
-					<i class="fas fa-arrow-circle-right"></i>
-				</a>
+            <div class="widget-row">
+                <div class="widget akademik">
+                    <h3>AKADEMIK</h3>
+                    <div class="icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <a href="" class="more-link">
+                        Selengkapnya
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+                <div class="widget kemahasiswaan">
+                    <h3>KEMAHASISWAAN</h3>
+                    <div class="icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <a href="" class="more-link">
+                        Selengkapnya
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
             </div>
-            <div class="widget kemahasiswaan">
-                <h3>KEMAHASISWAAN</h3>
-                
-				<div class="icon">
-					<i class="fas fa-book"></i>
-				</div>
-				<a href="" class="more-link">
-					Selengkapnya
-					<i class="fas fa-arrow-circle-right"></i>
-				</a>
+
+            <div class="widget-row">
+                <div class="widget kelembagaan">
+                    @if(isset($monevKelembagaanCount) && $monevKelembagaanCount > 0)
+                        <p>{{ $monevKelembagaanCount }}</p>
+                    @else
+                        <p>Data tidak tersedia</p>
+                    @endif
+                    <h3>KELEMBAGAAN</h3>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <a href="/monevs" class="more-link">
+                        Selengkapnya
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="widget diktendik">
+                    <h3>DIKTENDIK</h3>
+                    <div class="icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <a href="" class="more-link">
+                        Selengkapnya
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
             </div>
-			<div class="widget kelembagaan">
-                <h3>KELEMBAGAAN</h3>
-				<p>{{ $dataKelembagaan }}</p>
-				<div class="icon">
-					<i class="fas fa-users"></i>
-				</div>
-				<a href="/monevs" class="more-link">
-					Selengkapnya
-					<i class="fas fa-arrow-circle-right"></i>
-				</a>
-            </div>
-            <div class="widget diktendik" style="margin-right: 30px;">
-                <h3>DIKTENDIK</h3>
-                
-				<div class="icon">
-					<i class="fas fa-users-cog"></i>
-				</div>
-				<a href="" class="more-link">
-					Selengkapnya
-					<i class="fas fa-arrow-circle-right"></i>
-				</a>
+
+            <div class="widget-row">
+                <div class="widget ptb">
+                @if(isset($ptbCount) && $ptbCount > 0)
+                    <p> {{ $ptbCount }} </p>
+                @else
+                    <p>Data tidak tersedia</p>
+                @endisset
+                    <h3>Perguruan Tinggi Bermasalah</h3>
+                    <div class="icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <a href="/ptbs" class="more-link">
+                        Selengkapnya
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

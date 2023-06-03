@@ -144,10 +144,10 @@
                                                   Status
                                             </span>
                                         </th>
-                                        <th scope="col" class="px-9 py-3 text-left">
+                                        <th scope="col" class="px-6 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Progress Terakhir
+                                                  Permasalahan
                                             </span>
                                         </th>
                                         <th scope="col" class="px-9 py-3 text-left">
@@ -224,14 +224,13 @@
                                                     </div>
                                                 </a>
                                             </td>
-                                            <td class="h-px w-px whitespace-nowrap">
+                                            <td class="h-px w-72 min-w-[18rem]">
                                                 <a class="block relative z-10"
                                                    href="{{route('ptbs.show', $ptb->id)}}">
                                                     <div class="px-6 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {{$ptb->progressTerakhir}}
-                                                      </span>
+                                                        <p class="text-sm text-gray-500">
+                                                          {!! nl2br(e($ptb->progressTerakhir)) !!}
+                                                        </p>
                                                     </div>
                                                 </a>
                                             </td>

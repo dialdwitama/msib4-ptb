@@ -94,4 +94,5 @@ final class MonevController extends Controller
         return redirect()->route('monevs.index')
             ->with('success', 'Data monev berhasil dihapus.');
     }
+
 }

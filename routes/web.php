@@ -6,7 +6,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MonevController;
 use App\Http\Controllers\PtbController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\WidgetController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => view('welcome'));
@@ -23,7 +23,9 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/dashboard', [WidgetController::class, 'showWidget'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard');
+    Route::get('welcome', [PtbController::class, 'welcome'])->name('welcome');
+
 });
 
 
