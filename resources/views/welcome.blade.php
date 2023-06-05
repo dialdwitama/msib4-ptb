@@ -42,9 +42,9 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
              class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
             <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
                 <a class="font-medium text-white" href="#" aria-current="page">Home</a>
-                <!--@auth()
+                @auth()
                     <a class="font-medium text-gray-300 hover:text-white" href="{{route('dashboard')}}">Dashboard</a>
-                @endauth-->
+                @endauth
                 @guest()
                     <a class="font-medium text-gray-300 hover:text-white" href="{{route('login')}}">Login</a>
                 @endguest

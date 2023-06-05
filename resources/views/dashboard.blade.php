@@ -162,17 +162,18 @@
     </x-slot>
 
     <section>
-        <div class="dashboard-widgets">
-            <div class="widget akademik" style="margin-left: 30px;">
+    <div class="dashboard-widgets">
+        <div class="widget-row">
+            <div class="widget akademik">
                 <h3>AKADEMIK</h3>
                
-				<div class="icon">
-					<i class="fas fa-database"></i>
-				</div>
-				<a href="" class="more-link">
-					Selengkapnya
-					<i class="fas fa-arrow-circle-right"></i>
-				</a>
+               <div class="icon">
+                   <i class="fas fa-database"></i>
+               </div>
+               <a href="" class="more-link">
+                   Selengkapnya
+                   <i class="fas fa-arrow-circle-right"></i>
+               </a>
             </div>
             <div class="widget kemahasiswaan">
                 <h3>KEMAHASISWAAN</h3>
@@ -185,18 +186,24 @@
 					<i class="fas fa-arrow-circle-right"></i>
 				</a>
             </div>
-			<div class="widget kelembagaan">
-                <h3>KELEMBAGAAN</h3>
-				<p>{{ $dataKelembagaan }}</p>
-				<div class="icon">
-					<i class="fas fa-users"></i>
-				</div>
-				<a href="/monevs" class="more-link">
-					Selengkapnya
-					<i class="fas fa-arrow-circle-right"></i>
-				</a>
-            </div>
-            <div class="widget diktendik" style="margin-right: 30px;">
+        </div>
+        <div class="widget-row">
+            <div class="widget kelembagaan">
+                    @isset($monevKelembagaanCount)
+                        <p> {{ $monevKelembagaanCount }} </p>
+                    @else
+                        <p>Data tidak tersedia</p>
+                    @endisset
+                    <h3>KELEMBAGAAN</h3>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <a href="/monevs" class="more-link">
+                        Selengkapnya
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            <div class="widget diktendik">
                 <h3>DIKTENDIK</h3>
                 
 				<div class="icon">
@@ -208,6 +215,23 @@
 				</a>
             </div>
         </div>
-    </section>
+        <div class="widget ptb">
+                    @isset($ptbCount)
+                        <p> {{ $ptbCount }} </p>
+                    @else
+                        <p>Data tidak tersedia</p>
+                    @endisset
+                <h3>Perguruan Tinggi Bermasalah</h3>
+                
+				<div class="icon">
+					<i class="fas fa-users-cog"></i>
+				</div>
+				<a href="/ptbs" class="more-link">
+					Selengkapnya
+					<i class="fas fa-arrow-circle-right"></i>
+				</a>
+            </div>
+    </div>
+</section>
 </x-app-layout>
 </html>
