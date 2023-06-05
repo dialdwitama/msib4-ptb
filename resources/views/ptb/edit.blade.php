@@ -36,7 +36,7 @@
                         <label for="tgl"
                                class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal Progress</label>
                         <input type="date" name="tgl" id="tgl"
-                               value="{{$ptb->tgl}}"
+                               value="{{\Carbon\Carbon::parse($ptb->tgl)->format('Y-m-d')}}"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
 
@@ -68,11 +68,10 @@
                 </div>
 
                 <div>
-                    <label for="permintaan" class="block text-sm text-gray-700 font-medium dark:text-white">Permintaan</label>
-                    <textarea id="permintaan" name="permintaan" rows="4"
-                              class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 whitespace-nowrap">
-                        {{ trim($ptb->permintaan) }}
-                    </textarea>
+                    <label for="pic" class="block text-sm text-gray-700 font-medium dark:text-white">PIC</label>
+                    <input type="type" name="pic" id="pic"
+                               value="{{$ptb->pic}}"
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                 </div>
 
                 <div>

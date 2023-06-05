@@ -150,7 +150,7 @@
         <div class="dashboard-widgets">
             <div class="widget akademik" style="margin-left: 30px;">
                 <h3>AKADEMIK</h3>
-               
+				
 				<div class="icon">
 					<i class="fas fa-database"></i>
 				</div>

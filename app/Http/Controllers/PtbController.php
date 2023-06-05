@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePtbRequest;
 use App\Http\Requests\UpdatePtbRequest;
 use App\Models\Ptb;
+use App\Models\Detail;
 use Illuminate\Http\Request;
 
 final class PtbController extends Controller
@@ -68,7 +69,7 @@ final class PtbController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Ptb $ptb)
+    public function edit(ptb $ptb)
     {
         return view('ptb.edit', compact('ptb'));
     }
@@ -94,4 +95,5 @@ final class PtbController extends Controller
         return redirect()->route('ptbs.index')
             ->with('success', 'Data PTB berhasil dihapus.');
     }
+
 }
