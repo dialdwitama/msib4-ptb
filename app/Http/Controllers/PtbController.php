@@ -45,6 +45,7 @@ final class PtbController extends Controller
         return view('ptb.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -65,6 +66,8 @@ final class PtbController extends Controller
     {
         return view('ptb.show', compact('ptb'));
     }
+
+    
 
     /**
      * Show the form for editing the specified resource.

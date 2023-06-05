@@ -22,7 +22,7 @@ final class DetailController extends Controller
 }
     public function create()
     {
-        return view('ptb.add');
+        return view('detail.create');
     }
 }
 

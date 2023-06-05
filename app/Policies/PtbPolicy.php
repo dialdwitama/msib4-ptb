@@ -33,6 +33,11 @@ final class PtbPolicy
 
     }
 
+    public function create2(User $user): bool
+    {
+
+    }
+
     /**
      * Determine whether the user can update the model.
      */
