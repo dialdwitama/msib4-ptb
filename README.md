@@ -3,7 +3,7 @@
 Sistem Informasi Perguruan Tinggi Bermasalah (PTB) adalah sebuah sistem informasi yang digunakan untuk mengelola data
 Perguran Tinggi Bermasalah dan Rekapitulasi Monev
 
-## Tech Stack
+## Step 
 - Lakukan git clone https://github.com/dialdwitama/msib4-ptb
 - Ketik composer install
 - Setelah itu ketik npm install

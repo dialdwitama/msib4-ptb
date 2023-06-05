@@ -144,10 +144,10 @@
                                                   Status
                                             </span>
                                         </th>
-                                        <th scope="col" class="px-9 py-3 text-left">
+                                        <th scope="col" class="px-6 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Progress Terakhir
+                                                  Permasalahan
                                             </span>
                                         </th>
                                         <th scope="col" class="px-9 py-3 text-left">

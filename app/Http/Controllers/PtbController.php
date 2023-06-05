@@ -30,12 +30,12 @@ final class PtbController extends Controller
             ->simplePaginate(10)
             ->withQueryString();
 
-        return view('ptb.index', [
-            'ptbs' => $ptbs,
-            'keyword' => $request->input('keyword'),
-            'sort' => $request->input('sort'),
-        ]);
-    }
+            return view('ptb.index')->with([
+                'ptbs' => $ptbs,
+                'keyword' => $request->input('keyword'),
+                'sort' => $request->input('sort'),
+            ]);
+        }            
 
     /**
      * Show the form for creating a new resource.
@@ -98,5 +98,4 @@ final class PtbController extends Controller
         return redirect()->route('ptbs.index')
             ->with('success', 'Data PTB berhasil dihapus.');
     }
-
 }
