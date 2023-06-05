@@ -12,13 +12,16 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('details', function (Blueprint $table): void {
+        Schema::create('akademiks', function (Blueprint $table): void {
             $table->uuid('id')->primary();
             $table->string('kode')->unique();
-            $table->string('kegiatan');
-            $table->string('hasil_keg');
-            $table->string('lampiran');
-            $table->string('ket');
+            $table->string('nama_pt');
+            $table->date('tanggal_monev');
+            $table->text('permasalahan');
+            $table->string('alamat_monev');
+            $table->string('alamat_direktori');
+            $table->string('alamat_pddikti');
+            $table->string('hasil_monev')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('details');
+        Schema::dropIfExists('akademiks');
     }
 };

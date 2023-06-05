@@ -1,15 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Data PTB
+            Data Monev Diktendik
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-10xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!-- Table Section -->
-            @if($ptbs->count() > 0 || $keyword != '')
-            <div class="max-w-[88rem] mx-auto">
+            @if($diktendiks->count() > 0 || $keyword != '')
+            <div class="max-w-[85rem] mx-auto">
                 <!-- Card -->
                 <div class="flex flex-col">
                     <div class="-m-1.5 overflow-x-auto">
@@ -21,10 +21,10 @@
                                     class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
                                     <div>
                                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                                            Data PTB
+                                            Data Monev Diktendik
                                         </h2>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
-                                            Tambahkan, hapus dan edit data PTB.
+                                            Tambahkan, hapus dan edit data monev.
                                         </p>
                                     </div>
 
@@ -32,7 +32,7 @@
                                         <div class="inline-flex gap-x-2">
                                             <div>
                                                 <div class="relative">
-                                                    <form action="{{route('ptbs.index')}}" method="GET">
+                                                    <form action="{{route('diktendiks.index')}}" method="GET">
                                                         <input value="{{$keyword}}" type="text" id="keyword" name="keyword" class="py-3 px-4 pl-11 block w-full border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Pencarian">
                                                     </form>
                                                     <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-4">
@@ -43,12 +43,12 @@
                                                 </div>
                                             </div>
 
-                                            <a href="{{route('ptbs.create')}}"
+                                            <a href="{{route('diktendiks.create')}}"
                                                class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
-                                                Tambahkan Data PTB
+                                                Tambahkan Data Monev
                                             </a>
                                         </div>
                                     </div>
@@ -68,7 +68,7 @@
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                               href="{{route('ptbs.index', ['sort' => 'kode'])}}">
+                                               href="{{route('diktendiks.index', ['sort' => 'kode'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                   Kode
@@ -90,7 +90,7 @@
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                               href="{{route('ptbs.index', ['sort' => 'pt'])}}">
+                                               href="{{route('diktendiks.index', ['sort' => 'nama_pt'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                   Nama Perguruan Tinggi
@@ -112,10 +112,10 @@
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                               href="{{route('ptbs.index', ['sort' => 'tgl'])}}">
+                                               href="{{route('diktendiks.index', ['sort' => 'tanggal_monev'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Tanggal Progress Terakhir
+                                                  Tanggal Monev
                                                 </span>
                                                 <div
                                                     class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
@@ -132,40 +132,23 @@
                                             </a>
                                         </th>
 
-                                        <th scope="col" class="px-9 py-3 text-left">
-                                            <span
-                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Deadline
-                                            </span>
-                                        </th>
-                                        <th scope="col" class="px-6 py-3 text-left">
-                                            <span
-                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Status
-                                            </span>
-                                        </th>
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                   Permasalahan
                                             </span>
                                         </th>
-                                        <th scope="col" class="px-9 py-3 text-left">
-                                            <span
-                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  PIC
-                                            </span>
-                                        </th>
+
                                         <th scope="col" class="px-6 py-3 text-right"></th>
                                     </tr>
                                     </thead>
 
                                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                    @foreach($ptbs as $ptb)
+                                    @foreach($diktendiks as $diktendik)
                                         <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                   href="{{route('diktendiks.show', $diktendik->id)}}">
                                                     <div class="px-6 py-2">
                                                         <div
                                                             class="block text-sm dark:text-blue-500">
@@ -176,19 +159,19 @@
                                             </td>
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
-                                                    <div class="px-4 py-2">
-                                                        <p class="textinline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{$ptb->kode}}</p>
+                                                   href="{{route('diktendiks.show', $diktendik->id)}}">
+                                                    <div class="px-6 py-2">
+                                                        <p class="text-sm text-gray-500">{{$diktendik->kode}}</p>
                                                     </div>
                                                 </a>
                                             </td>
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
-                                                    <div class="px-4 py-2">
+                                                   href="{{route('diktendiks.show', $diktendik->id)}}">
+                                                    <div class="px-6 py-2">
                                                       <span
                                                           class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {{$ptb->pt}}
+                                                        {{$diktendik->nama_pt}}
                                                       </span>
                                                     </div>
                                                 </a>
@@ -196,53 +179,19 @@
                                             <td class="h-px w-px whitespace-nowrap">
                                                 
                                                 <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
-                                                    <div class="px-4 py-2">
-                                                        <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{\Carbon\Carbon::make($ptb->tgl)->toDateString()}}</p>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td class="h-px w-px whitespace-nowrap">
-                                                <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                   href="{{route('diktendiks.show', $diktendik->id)}}">
                                                     <div class="px-6 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {{$ptb->deadline}}
-                                                      </span>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td class="h-px w-px whitespace-nowrap">
-                                                <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
-                                                    <div class="px-5 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {{$ptb->status}}
-                                                      </span>
+                                                        <p class="text-sm text-gray-500">{{\Carbon\Carbon::make($diktendik->tanggal_monev)->toDateString()}}</p>
                                                     </div>
                                                 </a>
                                             </td>
                                             <td class="h-px w-72 min-w-[18rem]">
                                                 <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                   href="{{route('diktendiks.show', $diktendik->id)}}">
                                                     <div class="px-6 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                          {!! nl2br(e($ptb->progressTerakhir)) !!}
-                                                      </span>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td class="h-px w-px whitespace-nowrap">
-                                                <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
-                                                    <div class="px-6 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {{$ptb->pic}}
-                                                      </span>
+                                                        <p class="text-sm text-gray-500">
+                                                            {!! nl2br(e($diktendik->permasalahan)) !!}
+                                                        </p>
                                                     </div>
                                                 </a>
                                             </td>
@@ -268,16 +217,16 @@
                                                             Aksi
                                                           </span>
                                                                 <a class="flex items-center gap-x-3 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                                   href="{{route('diktendiks.show', $diktendik->id)}}">
                                                                     Lihat
                                                                 </a>
                                                                 <a class="flex items-center gap-x-3 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                                                   href="{{route('ptbs.edit', $ptb->id)}}">
+                                                                   href="{{route('diktendiks.edit', $diktendik->id)}}">
                                                                     Edit
                                                                 </a>
                                                             </div>
                                                             <div class="py-2 first:pt-0 last:pb-0">
-                                                                <form action="{{route('ptbs.destroy', $ptb->id)}}"
+                                                                <form action="{{route('diktendiks.destroy', $diktendik->id)}}"
                                                                       method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -305,14 +254,14 @@
                                     <div>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
                                             <span
-                                                class="font-semibold text-gray-800 dark:text-gray-200">{{$ptbs->count()}}</span>
+                                                class="font-semibold text-gray-800 dark:text-gray-200">{{$diktendiks->count()}}</span>
                                             results
                                         </p>
                                     </div>
 
                                     <div>
                                         <div class="inline-flex space-x-2">
-                                            {{$ptbs->links()}}
+                                            {{$diktendiks->links()}}
                                         </div>
                                     </div>
                                 </div>
@@ -336,10 +285,10 @@
                                     <!-- Header -->
                                     <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
                                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                                            Data PTB
+                                            Data Monev
                                         </h2>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
-                                            Tambahkan, hapus, dan edit data PTB.
+                                            Tambahkan, hapus, dan edit data monev.
                                         </p>
                                     </div>
                                     <!-- End Header -->
@@ -360,16 +309,16 @@
                                         </div>
 
                                         <h2 class="mt-5 font-semibold text-gray-800 dark:text-white">
-                                            Tidak ada data PTB saat ini.
+                                            Tidak ada data monev saat ini.
                                         </h2>
 
                                         <div class="mt-5 grid sm:flex gap-2">
-                                            <a href="{{route('ptbs.create')}}"
+                                            <a href="{{route('diktendiks.create')}}"
                                                class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
-                                                Tambahkan Data PTB
+                                                Tambahkan Data Monev
                                             </a>
                                         </div>
                                     </div>
