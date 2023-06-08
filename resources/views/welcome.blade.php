@@ -9,11 +9,12 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <title>SI PTB</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased flex flex-col h-screen">
+<body class="antialiased flex flex-col">
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-blue-600 text-sm py-4">
     <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div class="flex items-center justify-between">
@@ -53,9 +54,11 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     </nav>
 </header>
 <!-- Hero -->
-<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex justify-center mt-8">
+<!-- Hero -->
+<!-- Hero -->
+<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex justify-center mt-16">
     <!-- Grid -->
-    <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+    <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center h-screen">
         <div>
             <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">Selamat datang di Website <span class="text-blue-600">SI - PTB</span></h1>
             <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Sistem Informasi Perguruan Tinggi Bermasalah.</p>
@@ -106,6 +109,59 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     <!-- End Grid -->
 </div>
 <!-- End Hero -->
+
+
+<div class="col-span-1 flex justify-center text-center">
+                        <div>
+                            <i class="fas fa-building text-4xl" style="color:#000080;"></i>
+                            <h2 class="text-xl font-bold mb-4">Perguruan Tinggi Bermasalah</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+
+<div class="py-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="col-span-1 flex justify-center text-center">
+                        <div>
+                            <i class="fas fa-database text-4xl" style="color:#000080;"></i>
+                            <h2 class="text-xl font-bold mb-4">Akademik</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center text-center">
+                        <div>
+                            <i class="fas fa-book text-4xl" style="color:#000080;"></i>
+                            <h2 class="text-xl font-bold mb-4">Diktendik</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center text-center">
+                        <div>
+                            <i class="fas fa-users text-4xl" style="color:#000080;"></i>
+                            <h2 class="text-xl font-bold mb-4">Kelembagaan</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center text-center">
+                        <div>
+                            <i class="fas fa-users-cog text-4xl" style="color:#000080;"></i>
+                            <h2 class="text-xl font-bold mb-4">Kemahasiswaan</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 
 <div class="py-12">

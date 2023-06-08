@@ -16,17 +16,17 @@ return new class () extends Migration {
             $table->uuid('id')->primary();
             $table->string('kode')->unique();
             $table->string('pt');
-            $table->string('progressTerakhir');
+            $table->text('progressTerakhir');
             $table->date('tgl');
             $table->date('deadline');
             $table->string('status');
-            $table->string('progressReport');
+            $table->text('progressReport');
             $table->string('pic');
-            $table->string('permintaan');
+            $table->text('permintaan');
             $table->string('kegiatan');
-            $table->string('hasil_keg');
+            $table->text('hasil_keg');
             $table->string('lampiran');
-            $table->string('ket');
+            $table->text('ket');
             $table->timestamps();
         });
     }

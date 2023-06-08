@@ -165,6 +165,11 @@
     <div class="dashboard-widgets">
         <div class="widget-row">
             <div class="widget akademik">
+                    @isset($akademikCount)
+                        <p> {{ $akademikCount }} </p>
+                    @else
+                        <p>Data tidak tersedia</p>
+                    @endisset
                 <h3>AKADEMIK</h3>
                
                <div class="icon">
@@ -176,6 +181,11 @@
                </a>
             </div>
             <div class="widget kemahasiswaan">
+                    @isset($kemahasiswaanCount)
+                        <p> {{ $kemahasiswaanCount }} </p>
+                    @else
+                        <p>Data tidak tersedia</p>
+                    @endisset
                 <h3>KEMAHASISWAAN</h3>
                 
 				<div class="icon">
@@ -204,6 +214,11 @@
                     </a>
                 </div>
             <div class="widget diktendik">
+                    @isset($diktendikCount)
+                        <p> {{ $diktendikCount }} </p>
+                    @else
+                        <p>Data tidak tersedia</p>
+                    @endisset
                 <h3>DIKTENDIK</h3>
                 
 				<div class="icon">
@@ -224,7 +239,7 @@
                 <h3>Perguruan Tinggi Bermasalah</h3>
                 
 				<div class="icon">
-					<i class="fas fa-users-cog"></i>
+					<i class="fas fa-building"></i>
 				</div>
 				<a href="/ptbs" class="more-link">
 					Selengkapnya
