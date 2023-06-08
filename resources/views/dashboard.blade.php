@@ -172,13 +172,13 @@
                     @endisset
                 <h3>AKADEMIK</h3>
                
-               <div class="icon">
-                   <i class="fas fa-database"></i>
-               </div>
-               <a href="" class="more-link">
-                   Selengkapnya
-                   <i class="fas fa-arrow-circle-right"></i>
-               </a>
+				<div class="icon">
+					<i class="fas fa-database"></i>
+				</div>
+				<a href="akademiks" class="more-link">
+					Selengkapnya
+					<i class="fas fa-arrow-circle-right"></i>
+				</a>
             </div>
             <div class="widget kemahasiswaan">
                     @isset($kemahasiswaanCount)

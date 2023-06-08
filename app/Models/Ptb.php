@@ -16,20 +16,27 @@ final class Ptb extends Model
     protected $fillable = [
         'kode',
         'pt',
+        'tgl',
         'progressTerakhir',
         'status',
-        'tgl',
         'deadline',
-        'permintaan',
         'progressReport',
         'pic',
-        'kegiatan',
-        'hasil_keg',
-        'lampiran',
-        'ket',
     ];
 
     protected $casts = [
         'tgl' => 'date',
     ];
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    public function details()
+    {
+        return $this->hasMany(Detail::class, 'ptb_id');
+    }
+    
+    public function create2s()
+    {
+        return $this->hasMany(Create2::class, 'ptb_id', 'id');
+    }
 }

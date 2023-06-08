@@ -6,7 +6,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-final class StorePtbRequest extends FormRequest
+final class StoreDetailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,12 @@ final class StorePtbRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode' => ['required', 'string', 'max:255', 'unique:ptbs,kode'],
-            'pt' => ['required', 'string', 'max:255'],
-            'progressTerakhir' => ['required', 'string'],
-            'status' => ['required', 'string'],
-            'tgl' => ['required', 'date'],
-            'deadline' => ['required', 'date'],
-            'progressReport' => ['required', 'string'],
-            'pic' => ['required', 'string'],
+            'tgl' => 'required|date',
+            'permintaan' => 'required|string',
+            'kegiatan' => 'required|string',
+            'hasil_keg' => 'required|string',
+            'lampiran' => 'required|string',
+            'ket' => 'required|string',
         ];
     }
 }

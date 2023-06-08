@@ -29,7 +29,7 @@ final class UpdatePtbRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode' => ['required', 'string', 'max:255', 'unique:ptbs,kode'],
+            'kode' => ['required', 'string', 'max:255'],
             'pt' => ['required', 'string', 'max:255'],
             'progressTerakhir' => ['required', 'string'],
             'tgl' => ['required', 'date'],
@@ -37,11 +37,6 @@ final class UpdatePtbRequest extends FormRequest
             'status' => ['required', 'string'],
             'progressReport' => ['required', 'string'],
             'pic' => ['required', 'string'],
-            'permintaan' => ['required', 'string'],
-            'kegiatan' => ['required', 'string'],
-            'hasil_keg' => ['required', 'string'],
-            'lampiran' => ['required', 'string'],
-            'ket' => ['required', 'string'],
         ];
     }
 }

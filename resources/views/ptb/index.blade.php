@@ -196,23 +196,23 @@
                                             <td class="h-px w-px whitespace-nowrap">
                                                 
                                                 <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                   href="{{route('ptbs.show', $ptb->id)}}"> 
                                                     <div class="px-4 py-2">
                                                         <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{\Carbon\Carbon::make($ptb->tgl)->toDateString()}}</p>
                                                     </div>
                                                 </a>
                                             </td>
                                             <td class="h-px w-px whitespace-nowrap">
-                                                <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                <a class="block relative z-10" href="{{ route('ptbs.show', $ptb->id) }}">
                                                     <div class="px-6 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {{$ptb->deadline}}
-                                                      </span>
+                                                        <span class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium
+                                                            {{ $ptb->deadline < date('Y-m-d') ? 'text-white bg-red-500' : 'text-gray-800 dark:bg-gray-900 dark:text-gray-200' }}">
+                                                            {{ $ptb->deadline }}
+                                                        </span>
                                                     </div>
                                                 </a>
                                             </td>
+
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
                                                    href="{{route('ptbs.show', $ptb->id)}}">
