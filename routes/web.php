@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MonevController;
 use App\Http\Controllers\PtbController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\AkademikController;
 use App\Http\Controllers\DiktendikController;
 use App\Http\Controllers\KemahasiswaanController;
@@ -23,7 +24,7 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::resource('akademiks', AkademikController::class);
     Route::resource('diktendiks', DiktendikController::class);
     Route::resource('kemahasiswaans', KemahasiswaanController::class);
-
+    
 });
 
 Route::middleware('auth')->group(function (): void {
@@ -32,7 +33,10 @@ Route::middleware('auth')->group(function (): void {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard');
     Route::get('welcome', [PtbController::class, 'welcome'])->name('welcome');
-
+    Route::get('/ptb/create', [PtbController::class, 'create'])->name('ptbs.create');
+    Route::get('/ptb/{id}/create2', [PtbController::class, 'create2'])->name('ptbs.create2');
+    Route::post('/ptbs', [PtbController::class, 'store'])->name('ptbs.store');
+    Route::post('/ptbs/{id}/store2', [PtbController::class, 'store2'])->name('ptbs.store2');
 });
 
 

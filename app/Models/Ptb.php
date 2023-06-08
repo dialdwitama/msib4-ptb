@@ -34,4 +34,9 @@ final class Ptb extends Model
     {
         return $this->hasMany(Detail::class, 'ptb_id');
     }
+    
+    public function create2s()
+    {
+        return $this->hasMany(Create2::class, 'ptb_id', 'id');
+    }
 }

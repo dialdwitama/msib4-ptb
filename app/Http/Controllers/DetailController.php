@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateDetailRequest;
+use App\Http\Requests\StoreDetailRequest;
 use App\Models\Ptb;
 use App\Models\Detail;
 use Illuminate\Http\Request;
@@ -24,5 +25,6 @@ final class DetailController extends Controller
     {
         return view('detail.create');
     }
+    
 }
 

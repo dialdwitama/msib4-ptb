@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePtbRequest;
+use App\Http\Requests\StoreDetailRequest;
 use App\Http\Requests\UpdatePtbRequest;
 use App\Models\Ptb;
 use App\Models\Detail;
@@ -59,6 +60,29 @@ final class PtbController extends Controller
         return redirect()->route('ptbs.index')->with('success', 'Data PTB berhasil ditambahkan.');
     }
 
+    public function store2(StoreDetailRequest $request, $id)
+    {
+        // Ambil objek Ptb berdasarkan id
+    
+
+    // Buat data untuk disimpan
+    $data = [
+        'ptb_id' => $id, // Menggunakan $id dari URL
+        'tgl' => $request->tgl,
+        'permintaan' => $request->permintaan,
+        'kegiatan' => $request->kegiatan,
+        'hasil_keg' => $request->hasil_keg,
+        'lampiran' => $request->lampiran,
+        'ket' => $request->ket,
+    ];
+
+    // Simpan data pada tabel details
+    $detail = Detail::create($data);
+
+    return redirect()->route('ptbs.index')->with('success', 'Data Create2 berhasil ditambahkan');
+    }
+
+
     /**
      * Display the specified resource.
      */
@@ -67,6 +91,12 @@ final class PtbController extends Controller
         return view('ptb.show', compact('ptb'));
     }
 
+    public function create2($id)
+    {
+        $ptb = Ptb::find($id);
+        
+        return view('ptb.create2', compact('ptb'));
+    }
     
 
     /**
