@@ -52,8 +52,7 @@ final class PtbController extends Controller
      */
     public function store(StorePtbRequest $request)
     {
-        $request['permintaan'] = trim($request->permintaan, ',');
-
+        
         Ptb::query()
             ->create($request->validated());
 
@@ -79,7 +78,7 @@ final class PtbController extends Controller
     // Simpan data pada tabel details
     $detail = Detail::create($data);
 
-    return redirect()->route('ptbs.index')->with('success', 'Data Create2 berhasil ditambahkan');
+    return redirect()->route('ptbs.show', $id)->with('success', 'Detail berhasil ditambahkan');
     }
 
 
@@ -127,5 +126,19 @@ final class PtbController extends Controller
 
         return redirect()->route('ptbs.index')
             ->with('success', 'Data PTB berhasil dihapus.');
+    }
+
+    public function destroy2($id)
+    {
+        $detail = Detail::find($id);
+        
+        if ($detail) {
+            $ptbId = $detail->ptb_id; // Mendapatkan ptb_id sebelum menghapus detail PTB
+            $detail->delete();
+            return redirect()->route('ptbs.show', $ptbId)->with('success', 'Detail PTB berhasil dihapus.');
+        }
+
+        return redirect()->route('ptbs.show', $ptb_id)
+            ->with('success', 'Detail PTB gagal dihapus.');
     }
 }

@@ -20,6 +20,7 @@ final class Ptb extends Model
         'progressTerakhir',
         'status',
         'deadline',
+        'permasalahan',
         'progressReport',
         'pic',
     ];

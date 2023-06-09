@@ -13,9 +13,10 @@ return new class () extends Migration {
     public function up(): void
     {
         Schema::create('details', function (Blueprint $table): void {
-            $table->uuid('id')->primary();
+            $table->increments('id');
             $table->uuid('ptb_id');
-            $table->foreign('ptb_id')->references('id')->on('ptbs');
+            $table->foreign('ptb_id')->references('id')->on('ptbs')->onDelete('cascade');
+            $table->date('tgl');
             $table->string('permintaan');
             $table->string('kegiatan');
             $table->string('hasil_keg');

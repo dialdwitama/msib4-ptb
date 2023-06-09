@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::delete('details/{id}', [PtbController::class, 'destroy2'])->name('ptbs.destroy2');
     Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard');
     Route::get('welcome', [PtbController::class, 'welcome'])->name('welcome');
     Route::get('/ptb/create', [PtbController::class, 'create'])->name('ptbs.create');

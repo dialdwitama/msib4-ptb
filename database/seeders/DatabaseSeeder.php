@@ -30,6 +30,7 @@ final class DatabaseSeeder extends Seeder
             AkademikSeeder::class,
             DiktendikSeeder::class,
             KemahasiswaanSeeder::class,
+            PtbSeeder::class,
         ]);
     }
 }

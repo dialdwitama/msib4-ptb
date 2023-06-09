@@ -22,11 +22,7 @@ return new class () extends Migration {
             $table->string('status');
             $table->text('progressReport');
             $table->string('pic');
-            $table->text('permintaan');
-            $table->string('kegiatan');
-            $table->text('hasil_keg');
-            $table->string('lampiran');
-            $table->text('ket');
+            $table->text('permasalahan');
             $table->timestamps();
         });
     }
