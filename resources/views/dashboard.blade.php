@@ -126,14 +126,15 @@
         justify-content: center;
         margin-left: 10px;
     }
+    
 
     .widget.akademik {
-        background-color: #1C708C;
+        background-color: #B22222;
         margin-right: 20px;
     }
 
     .widget.kemahasiswaan {
-        background-color: #A01E40;
+        background-color: #FFA07A;
         margin-left: 20px;
     }
 
@@ -150,6 +151,8 @@
     .widget.ptb {
         background-color: #FFA500;
     }
+
+    
 
 </style>
 
@@ -175,10 +178,12 @@
 				<div class="icon">
 					<i class="fas fa-database"></i>
 				</div>
+                <div class="more-link-akademik">
 				<a href="akademiks" class="more-link">
 					Selengkapnya
 					<i class="fas fa-arrow-circle-right"></i>
 				</a>
+                </div>
             </div>
             <div class="widget kemahasiswaan">
                     @isset($kemahasiswaanCount)

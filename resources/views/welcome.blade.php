@@ -13,6 +13,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 
     <title>SI PTB</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body class="antialiased flex flex-col">
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-blue-600 text-sm py-4">
@@ -53,6 +54,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
         </div>
     </nav>
 </header>
+
 <!-- Hero -->
 <!-- Hero -->
 <!-- Hero -->
@@ -518,6 +520,15 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
             <!-- End Table Section -->
         @endif
     </div>
+    <footer class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-blue-600 text-sm py-4 text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+            <p class="text-left">LLDIKTI IV Kelembagaan © 2023</p>
+        </div>
+    </div>
+</footer>
 </div>
+
 </body>
+
 </html>
