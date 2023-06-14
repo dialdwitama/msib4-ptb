@@ -467,9 +467,56 @@
                     </div>
 
                     <div>
-                    <label for="kode_pt" class="block text-sm text-gray-700 font-medium dark:text-white">Kode PT</label>
-                    <input type="text" id="kode_pt" name="kode_pt"
+                    <label for="kode" class="block text-sm text-gray-700 font-medium dark:text-white">Kode PT</label>
+                    <input type="text" id="kode" name="kode"
                         class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
+                </div>
+            </div>
+            <!-- End Grid -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+                    <div>
+                        <label for="alamat_monev"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Monev</label>
+                        <input type="text" name="alamat_monev" id="alamat_monev"
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                    </div>
+
+                    <div>
+                        <label for="alamat_direktori"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Direktori</label>
+                        <input type="text" name="alamat_direktori" id="alamat_direktori"
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+                    <div>
+                        <label for="alamat_pddikti"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Alamat PDDIKTI</label>
+                        <input type="text" name="alamat_pddikti" id="alamat_pddikti"
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                    </div>
+
+                    <div>
+                        <label for="tanggal_monev"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal Monev</label>
+                        <input type="date" name="tanggal_monev" id="tanggal_monev"
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="permasalahan" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
+                    <textarea id="permasalahan" name="permasalahan" rows="4"
+                              class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"></textarea>
+                </div>
+
+                <div>
+                    <label for="hasil_monev"
+                           class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Monev</label>
+                    <input type="text" name="hasil_monev" id="hasil_monev"
+                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                 </div>
             </div>
             <!-- End Grid -->
@@ -494,7 +541,6 @@
         </form>
         <!-- End Form -->
     </div>
-
 </x-app-layout>
 
 <script>
@@ -952,6 +998,6 @@
         var selectedNamaPT = document.getElementById("nama_pt").value;
         var kodePT = kodePTMap[selectedNamaPT] || "";
 
-        document.getElementById("kode_pt").value = kodePT;
+        document.getElementById("kode").value = kodePT;
     }
 </script>

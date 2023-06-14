@@ -127,4 +127,29 @@ final class PtbController extends Controller
         return redirect()->route('ptbs.index')
             ->with('success', 'Data PTB berhasil dihapus.');
     }
+
+    public function destroy2($id)
+    {
+        $detail = Detail::find($id);
+        
+        if ($detail) {
+            $ptbId = $detail->ptb_id; // Mendapatkan ptb_id sebelum menghapus detail PTB
+            $detail->delete();
+            return redirect()->route('ptbs.show', $ptbId)->with('success', 'Detail PTB berhasil dihapus.');
+        }
+
+        return redirect()->route('ptbs.show', $ptb_id)
+            ->with('success', 'Detail PTB gagal dihapus.');
+    }
+
+    public function exportToExcel()
+    {
+        $ptbs = Ptb::all();
+
+        return Excel::download(function ($excel) use ($ptbs) {
+            $excel->sheet('Sheet 1', function ($sheet) use ($ptbs) {
+                $sheet->fromArray($ptbs);
+            });
+        }, 'data_ptb.xlsx');
+    }
 }

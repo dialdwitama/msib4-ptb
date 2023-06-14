@@ -467,8 +467,8 @@
                     </div>
 
                     <div>
-                    <label for="kode_pt" class="block text-sm text-gray-700 font-medium dark:text-white">Kode PT</label>
-                    <input type="text" id="kode_pt" name="kode_pt"
+                    <label for="kode" class="block text-sm text-gray-700 font-medium dark:text-white">Kode PT</label>
+                    <input type="text" id="kode" name="kode"
                         class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
                 </div>
                 </div>
@@ -999,6 +999,6 @@
         var selectedNamaPT = document.getElementById("nama_pt").value;
         var kodePT = kodePTMap[selectedNamaPT] || "";
 
-        document.getElementById("kode_pt").value = kodePT;
+        document.getElementById("kode").value = kodePT;
     }
 </script>

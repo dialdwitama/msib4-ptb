@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Data Monev Kelembagaan
+            Data Monev Umum
         </h2>
     </x-slot>
 
@@ -21,7 +21,7 @@
                                     class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
                                     <div>
                                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                                            Data Monev Kelembagaan
+                                            Data Monev Umum
                                         </h2>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
                                             Tambahkan, hapus dan edit data monev.
