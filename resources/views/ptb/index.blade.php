@@ -133,10 +133,25 @@
                                         </th>
 
                                         <th scope="col" class="px-9 py-3 text-left">
+                                        <a class="group inline-flex items-center gap-x-2"
+                                        href="{{route('ptbs.index', ['sort' => 'deadline'])}}">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                   Deadline
                                             </span>
+                                            <div
+                                                    class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
+                                                    <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
+                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.55921 0.287451C7.86808 -0.0958171 8.40096 -0.0958167 8.70982 0.287451L12.9295 5.52367C13.3857 6.08979 13.031 7 12.3542 7H3.91488C3.23806 7 2.88336 6.08979 3.33957 5.52367L7.55921 0.287451Z"
+                                                            fill="currentColor"/>
+                                                        <path
+                                                            d="M8.70983 15.7125C8.40096 16.0958 7.86808 16.0958 7.55921 15.7125L3.33957 10.4763C2.88336 9.9102 3.23806 9 3.91488 9H12.3542C13.031 9 13.3857 9.9102 12.9295 10.4763L8.70983 15.7125Z"
+                                                            fill="currentColor"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <span
@@ -206,12 +221,16 @@
                                                 <a class="block relative z-10" href="{{ route('ptbs.show', $ptb->id) }}">
                                                     <div class="px-6 py-2">
                                                         <span class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium
-                                                            {{ $ptb->deadline < date('Y-m-d') ? 'text-white bg-red-500' : 'text-gray-800 dark:bg-gray-900 dark:text-gray-200' }}">
+                                                            @if ($ptb->deadline < date('Y-m-d')) text-white bg-red-500
+                                                            @elseif ($ptb->deadline <= date('Y-m-d', strtotime('+7 days'))) text-black bg-yellow-500
+                                                            @else text-gray-800 dark:bg-gray-900 dark:text-gray-200
+                                                            @endif">
                                                             {{ $ptb->deadline }}
                                                         </span>
                                                     </div>
                                                 </a>
                                             </td>
+
 
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
@@ -282,8 +301,7 @@
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit"
-                                                                            class="flex w-full items-center gap-x-3 py-2 px-3 rounded-md text-sm text-red-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-red-500 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                                                    >
+                                                                            class="flex w-full items-center gap-x-3 py-2 px-3 rounded-md text-sm text-red-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-red-500 dark:hover:bg-gray-700 dark:hover:text-gray-300">
                                                                         Hapus
                                                                     </button>
                                                                 </form>

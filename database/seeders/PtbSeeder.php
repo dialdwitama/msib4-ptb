@@ -14,6 +14,6 @@ final class PtbSeeder extends Seeder
      */
     public function run(): void
     {
-        Ptb::factory(10)->create();
+        Ptb::factory(7)->create();
     }
 }

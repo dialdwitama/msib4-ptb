@@ -30,6 +30,7 @@ final class StorePtbRequest extends FormRequest
             'status' => ['required', 'string'],
             'tgl' => ['required', 'date'],
             'deadline' => ['required', 'date'],
+            'permasalahan' => ['required','string'],
             'progressReport' => ['required', 'string'],
             'pic' => ['required', 'string'],
         ];

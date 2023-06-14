@@ -37,7 +37,7 @@
                                                 <tr>
                                                     <th scope="col" class="px-6 py-3 text-left bg-gray-200 dark:bg-gray-700">
                                                         <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                            PTB NAME
+                                                            PT
                                                         </span>
                                                     </th>
                                                 </tr>
@@ -46,7 +46,7 @@
                                                 <tr>
                                                     <td class="h-px w-px whitespace-nowrap">
                                                         <a class="block-relative z-10">
-                                                            <div class="px-4 py-6xx">
+                                                            <div class="px-4 py-2">
                                                                 <span class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{ $ptb->pt }}</span>
                                                             </div>
                                                         </a>
@@ -135,6 +135,39 @@
                                                                     <p class="textinline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{!! nl2br(e($detail->ket)) !!}</p>
                                                                 </div>
                                                             </a>
+                                                            <td class="h-px w-px whitespace-nowrap">
+                                                <div class="px-6 py-2">
+                                                    <div
+                                                        class="hs-dropdown relative inline-block [--placement:bottom-right]">
+                                                        <button id="hs-table-dropdown-1" type="button"
+                                                                class="hs-dropdown-toggle py-1.5 px-2 inline-flex justify-center items-center gap-2 rounded-md text-gray-700 align-middle focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                                 width="16" height="16" fill="currentColor"
+                                                                 viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </button>
+                                                        <div
+                                                            class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mt-2 divide-y divide-gray-200 min-w-[10rem] z-20 bg-white shadow-2xl rounded-lg p-2 mt-2 dark:divide-gray-700 dark:bg-gray-800 dark:border dark:border-gray-700"
+                                                            aria-labelledby="hs-table-dropdown-1">
+                                                            <div class="py-2 first:pt-0 last:pb-0">
+                                                          <span
+                                                              class="block py-2 px-3 text-xs font-medium uppercase text-gray-400 dark:text-gray-600">
+                                                            Aksi
+                                                          </span>
+                                                            </div>
+                                                            <div class="py-2 first:pt-0 last:pb-0">
+                                                                <form action="{{route('ptbs.destroy2', $detail->id)}}"
+                                                                      method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                            class="flex w-full items-center gap-x-3 py-2 px-3 rounded-md text-sm text-red-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-red-500 dark:hover:bg-gray-700 dark:hover:text-gray-300">
+                                                                        Hapus
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 @endforeach

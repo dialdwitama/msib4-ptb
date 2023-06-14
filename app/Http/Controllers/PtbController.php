@@ -52,8 +52,7 @@ final class PtbController extends Controller
      */
     public function store(StorePtbRequest $request)
     {
-        $request['permintaan'] = trim($request->permintaan, ',');
-
+        
         Ptb::query()
             ->create($request->validated());
 
@@ -79,7 +78,7 @@ final class PtbController extends Controller
     // Simpan data pada tabel details
     $detail = Detail::create($data);
 
-    return redirect()->route('ptbs.index')->with('success', 'Data Create2 berhasil ditambahkan');
+    return redirect()->route('ptbs.show', $id)->with('success', 'Detail berhasil ditambahkan');
     }
 
 
@@ -127,14 +126,5 @@ final class PtbController extends Controller
 
         return redirect()->route('ptbs.index')
             ->with('success', 'Data PTB berhasil dihapus.');
-    }
-    
-    public function welcome()
-    {
-        $ptbs = Ptb::all();
-    
-        return view('welcome', [
-            'ptbs' => $ptbs,
-        ]);
     }
 }
