@@ -23,7 +23,9 @@ class DashboardController extends Controller
 
     $kemahasiswaanCount = Kemahasiswaan::count();
 
-    return view('dashboard', compact('monevKelembagaanCount', 'ptbCount', 'akademikCount', 'diktendikCount', 'kemahasiswaanCount'));
+    $ptbs = Ptb::all();
+
+    return view('dashboard', compact('monevKelembagaanCount', 'ptbCount', 'akademikCount', 'diktendikCount', 'kemahasiswaanCount', 'ptbs'));
 }
 
 }

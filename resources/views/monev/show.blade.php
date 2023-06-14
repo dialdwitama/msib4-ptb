@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Informasi Detail Monev
+            Informasi Detail Monev Umum
         </h2>
     </x-slot>
 
@@ -12,7 +12,7 @@
                 <div
                     class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-gray-700">
                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
-                        Data Monev
+                        Data Monev Umum
                     </p>
                 </div>
                 <div class="w-full">

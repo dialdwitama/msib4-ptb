@@ -32,12 +32,12 @@ final class PtbController extends Controller
             ->simplePaginate(10)
             ->withQueryString();
 
-            return view('ptb.index')->with([
-                'ptbs' => $ptbs,
-                'keyword' => $request->input('keyword'),
-                'sort' => $request->input('sort'),
-            ]);
-        }            
+        return view('ptb.index', [
+            'ptbs' => $ptbs,
+            'keyword' => $request->input('keyword'),
+            'sort' => $request->input('sort'),
+        ]);
+    }           
 
     /**
      * Show the form for creating a new resource.
@@ -141,5 +141,16 @@ final class PtbController extends Controller
 
         return redirect()->route('ptbs.show', $ptb_id)
             ->with('success', 'Detail PTB gagal dihapus.');
+    }
+
+    public function exportToExcel()
+    {
+        $ptbs = Ptb::all();
+
+        return Excel::download(function ($excel) use ($ptbs) {
+            $excel->sheet('Sheet 1', function ($sheet) use ($ptbs) {
+                $sheet->fromArray($ptbs);
+            });
+        }, 'data_ptb.xlsx');
     }
 }
