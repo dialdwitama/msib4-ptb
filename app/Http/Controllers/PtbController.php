@@ -25,8 +25,9 @@ final class PtbController extends Controller
             ->when($request->input('keyword'), function ($query, $keyword): void {
                 $keyword = ucfirst($keyword);
 
-                $query->where('kode', 'like', "%{$keyword}%")
-                    ->orWhere('pt', 'like', "%{$keyword}%");
+                $query->where('permasalahan', 'like', "%{$keyword}%")
+                ->orWhere('kode', 'like', "%{$keyword}%")
+                ->orWhere('pt', 'like', "%{$keyword}%");
             })
             ->simplePaginate(10)
             ->withQueryString();

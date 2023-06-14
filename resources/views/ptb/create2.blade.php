@@ -22,19 +22,10 @@
 
                 </div>
                 <!-- End Grid -->
-                <div>
-                    <label for="permintaan" class="block text-sm text-gray-700 font-medium dark:text-white">Permintaan</label>
-                    <textarea id="permintaan" name="permintaan" rows="4"
-                              class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"></textarea>
-                </div>
+                
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                 <div>
-                    <label for="kegiatan"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Kegiatan</label>
-                    <input type="text" name="kegiatan" id="kegiatan"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
+               
                 <div>
                     <label for="hasil_keg"
                            class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Kegiatan</label>
@@ -51,12 +42,7 @@
                     <input type="text" name="lampiran" id="lampiran"
                            class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                 </div>
-                <div>
-                    <label for="ket"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Keterangan</label>
-                    <input type="text" name="ket" id="ket"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
+                
                 
             <!-- End Grid -->
 

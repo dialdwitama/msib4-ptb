@@ -9,7 +9,7 @@ class Detail extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'ptb_id','tgl','permintaan','kegiatan','hasil_keg', 'lampiran', 'ket'
+        'ptb_id','tgl','hasil_keg','lampiran'
     ];
 
     public function Ptb()
