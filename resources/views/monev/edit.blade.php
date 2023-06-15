@@ -37,7 +37,7 @@
                                class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Monev</label>
                         <input type="text" name="alamat_monev" id="alamat_monev"
                                value="{{$monev->alamat_monev}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
                     </div>
 
                     <div>
@@ -45,7 +45,7 @@
                                class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Direktori</label>
                         <input type="text" name="alamat_direktori" id="alamat_direktori"
                                value="{{$monev->alamat_direktori}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
                                class="block text-sm text-gray-700 font-medium dark:text-white">Alamat PDDIKTI</label>
                         <input type="text" name="alamat_pddikti" id="alamat_pddikti"
                                value="{{$monev->alamat_pddikti}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
                     </div>
 
                     <div>

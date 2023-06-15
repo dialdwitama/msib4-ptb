@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Exports\MonevsKhususExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StorePtbRequest;
 use App\Http\Requests\StoreDetailRequest;
 use App\Http\Requests\UpdatePtbRequest;
@@ -143,14 +145,8 @@ final class PtbController extends Controller
             ->with('success', 'Detail PTB gagal dihapus.');
     }
 
-    public function exportToExcel()
+    public function export(Request $request)
     {
-        $ptbs = Ptb::all();
-
-        return Excel::download(function ($excel) use ($ptbs) {
-            $excel->sheet('Sheet 1', function ($sheet) use ($ptbs) {
-                $sheet->fromArray($ptbs);
-            });
-        }, 'data_ptb.xlsx');
+        return Excel::download(new MonevsKhususExport, 'ptbs.xlsx');
     }
 }

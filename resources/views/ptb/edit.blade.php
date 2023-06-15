@@ -60,7 +60,7 @@
                     </div>
 
                     <!-- edit.blade.php -->
-<div>
+                    <div>
     <label for="status" class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
     <select name="status" id="status" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
         <option value="Aman">Aman</option>
@@ -75,25 +75,43 @@
 
 <script>
     const statusSelect = document.getElementById('status');
-
-    // Mendapatkan nilai status dari hasil create
-    const statusValue = "{{ $ptb->status }}";
-    statusSelect.value = statusValue;
+    const otherOption = document.querySelector('option[value="other"]');
 
     statusSelect.addEventListener('change', function() {
         if (statusSelect.value === 'other') {
-            const customStatus = prompt('Masukkan status kustom:', statusValue);
+            const customStatus = prompt('Masukkan status kustom:');
             if (customStatus) {
                 // Mengganti nilai dengan status kustom yang dimasukkan
+                otherOption.value = customStatus;
+                otherOption.text = customStatus;
                 statusSelect.value = customStatus;
             } else {
                 // Jika pengguna membatalkan, kembali ke opsi sebelumnya
-                statusSelect.value = statusValue;
+                statusSelect.value = '';
             }
         }
     });
-</script>
 
+    // Mendapatkan nilai status dari variabel $ptb
+    const statusValue = "{{ $ptb->status }}";
+    
+    if (statusValue !== 'other') {
+        // Jika status bukan "Lainnya", tetapkan nilai status
+        statusSelect.value = statusValue;
+    } else {
+        // Jika status "Lainnya", tampilkan prompt untuk mengisi status kustom
+        const customStatus = prompt('Masukkan status kustom:', statusValue);
+        if (customStatus) {
+            // Mengganti nilai dengan status kustom yang dimasukkan
+            otherOption.value = customStatus;
+            otherOption.text = customStatus;
+            statusSelect.value = customStatus;
+        } else {
+            // Jika pengguna membatalkan, kembali ke opsi sebelumnya
+            statusSelect.value = '';
+        }
+    }
+</script>
 
                 </div>
 
@@ -120,7 +138,7 @@
                 </button>
             </div>
             <div class="mt-5">
-                <a href="{{route('ptbs.show', $ptb->id)}}"
+                <a href="{{ url()->previous() }}"
                    class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="w-2.5 h-auto">

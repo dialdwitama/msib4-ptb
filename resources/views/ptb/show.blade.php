@@ -69,7 +69,7 @@
                                                             Hasil Keg
                                                         </span>
                                                     </th>
-                                                    <th scope="col" class="px-6 py-3 text-left bg-gray-200 dark:bg-gray-700">
+                                                    <th scope="col" class="px-5 py-3 text-left bg-gray-200 dark:bg-gray-700">
                                                         <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                             Lampiran
                                                         </span>
@@ -96,7 +96,7 @@
                                                         <td class="h-px w-72 min-w-[18rem]">
                                                             <a class="block-relative z-10">
                                                                 <div class="px-4 py-2">
-                                                                    <p class="textinline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{!! nl2br(e($detail->lampiran)) !!}</p>
+                                                                <a href="{{ $detail->lampiran }}" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 text-xs">{!! nl2br(e($detail->lampiran)) !!}</a>
                                                                 </div>
                                                             </a>
                                                         </td>

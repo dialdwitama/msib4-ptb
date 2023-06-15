@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Exports\MonevsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreMonevRequest;
 use App\Http\Requests\UpdateMonevRequest;
 use App\Models\Monev;
@@ -93,6 +95,11 @@ final class MonevController extends Controller
 
         return redirect()->route('monevs.index')
             ->with('success', 'Data monev berhasil dihapus.');
+    }
+
+    public function export(Request $request)
+    {
+        return Excel::download(new MonevsExport, 'monevs.xlsx');
     }
 
 }

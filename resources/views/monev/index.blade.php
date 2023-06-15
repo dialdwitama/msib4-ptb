@@ -160,15 +160,18 @@
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
                                                    href="{{route('monevs.show', $monev->id)}}">
-                                                    <div class="px-6 py-2">
-                                                        <p class="text-sm text-gray-500">{{$monev->kode}}</p>
+                                                    <div class="px-4 py-2">
+                                                    <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$monev->kode}}
+                                                      </span>
                                                     </div>
                                                 </a>
                                             </td>
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
                                                    href="{{route('monevs.show', $monev->id)}}">
-                                                    <div class="px-6 py-2">
+                                                    <div class="px-4 py-2">
                                                       <span
                                                           class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
                                                         {{$monev->nama_pt}}
@@ -181,15 +184,15 @@
                                                 <a class="block relative z-10"
                                                    href="{{route('monevs.show', $monev->id)}}">
                                                     <div class="px-6 py-2">
-                                                        <p class="text-sm text-gray-500">{{\Carbon\Carbon::make($monev->tanggal_monev)->toDateString()}}</p>
+                                                        <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{\Carbon\Carbon::make($monev->tanggal_monev)->toDateString()}}</p>
                                                     </div>
                                                 </a>
                                             </td>
                                             <td class="h-px w-72 min-w-[18rem]">
                                                 <a class="block relative z-10"
                                                    href="{{route('monevs.show', $monev->id)}}">
-                                                    <div class="px-6 py-2">
-                                                        <p class="text-sm text-gray-500">
+                                                    <div class="px-4 py-2">
+                                                        <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
                                                             {!! nl2br(e($monev->permasalahan)) !!}
                                                         </p>
                                                     </div>
@@ -359,6 +362,7 @@
                                                             stroke-linecap="round"/>
                                                     </svg>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -372,5 +376,15 @@
                 <!-- End Table Section -->
             @endif
         </div>
+        <div>
+        <!-- ... -->
+        <a href="{{ route('monevs.export') }}"
+           class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Download Excel
+        </a>
+    </div>
     </div>
 </x-app-layout>
