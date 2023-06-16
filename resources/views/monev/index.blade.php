@@ -135,7 +135,7 @@
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Permasalahan
+                                                  Hasil Monev
                                             </span>
                                         </th>
 
@@ -193,7 +193,7 @@
                                                    href="{{route('monevs.show', $monev->id)}}">
                                                     <div class="px-4 py-2">
                                                         <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                            {!! nl2br(e($monev->permasalahan)) !!}
+                                                            {!! nl2br(e($monev->hasil_monev)) !!}
                                                         </p>
                                                     </div>
                                                 </a>

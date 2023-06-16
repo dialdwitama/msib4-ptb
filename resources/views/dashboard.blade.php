@@ -243,8 +243,8 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                                href=""
-                                                    class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                href="">
+                                                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                     Kode
                                                 </span>
                                                 <div
@@ -352,7 +352,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                                             <a class="block relative z-10"
                                                 href="{{route('ptbs.show', $ptb->id)}}">
                                                 <div class="px-6 py-2">
-                                                    <p class="text-sm text-gray-500">{{$ptb->kode}}</p>
+                                                    <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{$ptb->kode}}</p>
                                                 </div>
                                             </a>
                                         </td>
@@ -404,7 +404,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                                             <a class="block relative z-10"
                                                 href="{{route('ptbs.show', $ptb->id)}}">
                                                 <div class="px-6 py-2">
-                                                    <p class="text-sm text-gray-500">
+                                                    <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
                                                         {!! nl2br(e($ptb->progressTerakhir)) !!}
                                                     </p>
                                                 </div>

@@ -68,20 +68,14 @@
                 </div>
 
                 <div>
-                    <label for="permasalahan" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
-                    <textarea id="permasalahan" name="permasalahan" rows="4"
+                    <label for="hasil_monev" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
+                    <textarea id="hasil_monev" name="hasil_monev" rows="4"
                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 whitespace-nowrap">
-                        {{ trim($monev->permasalahan) }}
+                        {{ trim($monev->hasil_monev) }}
                     </textarea>
                 </div>
 
-                <div>
-                    <label for="hasil_monev"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Monev</label>
-                    <input type="text" name="hasil_monev" id="hasil_monev"
-                           value="{{$monev->hasil_monev}}"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
+                
             </div>
             <!-- End Grid -->
 

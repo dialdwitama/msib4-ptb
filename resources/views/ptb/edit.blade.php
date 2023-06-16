@@ -63,54 +63,63 @@
                     <div>
     <label for="status" class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
     <select name="status" id="status" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-        <option value="Aman">Aman</option>
-        <option value="Menunggu Penggabungan">Menunggu Penggabungan</option>
-        <option value="Menunggu Pelaporan">Menunggu Pelaporan</option>
-        <option value="Sudah Kedaluwarsa">Sudah Kedaluwarsa</option>
-        <option value="Sedang Ditindaklanjuti">Sedang Ditindaklanjuti</option>
-        <option value="Tutup">Tutup</option>
-        <option value="other">Lainnya</option>
+        <option value="Aman" {{ $ptb->status == 'Aman' ? 'selected' : '' }}>Aman</option>
+        <option value="Menunggu Penggabungan" {{ $ptb->status == 'Menunggu Penggabungan' ? 'selected' : '' }}>Menunggu Penggabungan</option>
+        <option value="Menunggu Pelaporan" {{ $ptb->status == 'Menunggu Pelaporan' ? 'selected' : '' }}>Menunggu Pelaporan</option>
+        <option value="Sudah Kedaluwarsa" {{ $ptb->status == 'Sudah Kedaluwarsa' ? 'selected' : '' }}>Sudah Kedaluwarsa</option>
+        <option value="Sedang Ditindaklanjuti" {{ $ptb->status == 'Sedang Ditindaklanjuti' ? 'selected' : '' }}>Sedang Ditindaklanjuti</option>
+        <option value="{{ $ptb->status }}" {{ $ptb->status == 'other' ? 'selected' : '' }}>{{ $ptb->status }}</option>
+        <option value="other2">Lainnya</option>
     </select>
 </div>
 
 <script>
     const statusSelect = document.getElementById('status');
     const otherOption = document.querySelector('option[value="other"]');
+    const customStatusValue = "{{ $ptb->status }}";
 
     statusSelect.addEventListener('change', function() {
         if (statusSelect.value === 'other') {
             const customStatus = prompt('Masukkan status kustom:');
             if (customStatus) {
-                // Mengganti nilai dengan status kustom yang dimasukkan
                 otherOption.value = customStatus;
                 otherOption.text = customStatus;
                 statusSelect.value = customStatus;
             } else {
-                // Jika pengguna membatalkan, kembali ke opsi sebelumnya
                 statusSelect.value = '';
             }
         }
     });
 
-    // Mendapatkan nilai status dari variabel $ptb
-    const statusValue = "{{ $ptb->status }}";
-    
-    if (statusValue !== 'other') {
-        // Jika status bukan "Lainnya", tetapkan nilai status
-        statusSelect.value = statusValue;
-    } else {
-        // Jika status "Lainnya", tampilkan prompt untuk mengisi status kustom
-        const customStatus = prompt('Masukkan status kustom:', statusValue);
+    if (customStatusValue && customStatusValue !== 'other') {
+        statusSelect.value = customStatusValue;
+    } else if (customStatusValue === 'other') {
+        const customStatus = prompt('Masukkan status kustom:', customStatusValue);
         if (customStatus) {
-            // Mengganti nilai dengan status kustom yang dimasukkan
             otherOption.value = customStatus;
             otherOption.text = customStatus;
             statusSelect.value = customStatus;
         } else {
-            // Jika pengguna membatalkan, kembali ke opsi sebelumnya
             statusSelect.value = '';
         }
     }
+
+    // Dropdown "other" kedua
+    const statusSelect2 = document.getElementById('status');
+    const otherOption2 = document.querySelector('option[value="other2"]');
+
+    statusSelect2.addEventListener('change', function() {
+        if (statusSelect2.value === 'other2') {
+            const customStatus2 = prompt('Masukkan status kustom lagi:');
+            if (customStatus2) {
+                otherOption2.value = customStatus2;
+                otherOption2.text = customStatus2;
+                statusSelect2.value = customStatus2;
+            } else {
+                statusSelect2.value = '';
+            }
+        }
+    });
 </script>
 
                 </div>

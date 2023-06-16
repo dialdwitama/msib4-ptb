@@ -476,23 +476,22 @@
                 <!-- End Grid -->
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-                    <div>
-                        <label for="progressTerakhir"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
-                        <input type="text" name="progressTerakhir" id="progressTerakhir"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                    </div>
-                    <div>
-    <label for="status" class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
-    <select name="status" id="status" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-        <option value="Aman">Aman</option>
-        <option value="Menunggu Penggabungan">Menunggu Penggabungan</option>
-        <option value="Menunggu Pelaporan">Menunggu Pelaporan</option>
-        <option value="Sudah Kedaluwarsa">Sudah Kedaluwarsa</option>
-        <option value="Sedang Ditindaklanjuti">Sedang Ditindaklanjuti</option>
-        <option value="Tutup">Tutup</option>
-        <option value="other">Lainnya</option>
-    </select>
+    <div>
+        <label for="progressTerakhir" class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
+        <input type="text" name="progressTerakhir" id="progressTerakhir" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+    </div>
+    <div>
+        <label for="status" class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
+        <select name="status" id="status" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+            <option value="Aman">Aman</option>
+            <option value="Menunggu Penggabungan">Menunggu Penggabungan</option>
+            <option value="Menunggu Pelaporan">Menunggu Pelaporan</option>
+            <option value="Sudah Kedaluwarsa">Sudah Kedaluwarsa</option>
+            <option value="Sedang Ditindaklanjuti">Sedang Ditindaklanjuti</option>
+            <option value="Tutup">Tutup</option>
+            <option value="other">Lainnya</option>
+        </select>
+    </div>
 </div>
 
 <script>
@@ -503,17 +502,16 @@
         if (statusSelect.value === 'other') {
             const customStatus = prompt('Masukkan status kustom:');
             if (customStatus) {
-                // Mengganti nilai dengan status kustom yang dimasukkan
                 otherOption.value = customStatus;
                 otherOption.text = customStatus;
                 statusSelect.value = customStatus;
             } else {
-                // Jika pengguna membatalkan, kembali ke opsi sebelumnya
                 statusSelect.value = '';
             }
         }
     });
 </script>
+
 
 
 
@@ -551,9 +549,8 @@
                 <div>
                     <label for="pic"
                            class="block text-sm text-gray-700 font-medium dark:text-white">PIC</label>
-                    <select name="pic" id="pic"
+                    <input type="text" name="pic" id="pic"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                               <option value="LLDIKTI4">LLDIKTI4</option></select>
                 </div>
             </div>
             <!-- End Grid -->

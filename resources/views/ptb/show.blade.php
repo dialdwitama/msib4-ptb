@@ -94,9 +94,9 @@
                                                             </a>
                                                         </td>
                                                         <td class="h-px w-72 min-w-[18rem]">
-                                                            <a class="block-relative z-10">
+                                                            <a class="block-relative z-10" >
                                                                 <div class="px-4 py-2">
-                                                                <a href="{{ $detail->lampiran }}" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 text-xs">{!! nl2br(e($detail->lampiran)) !!}</a>
+                                                                <a href="{{ $detail->lampiran }}" target="_blank" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 text-xs">{!! nl2br(e($detail->lampiran)) !!}</a>
                                                                 </div>
                                                             </a>
                                                         </td>

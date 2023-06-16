@@ -17,11 +17,11 @@
                     <label for="nama_pt" class="block text-sm text-gray-700 font-medium dark:text-white">Nama PT</label>
                     <input list="nama_pt_list" id="nama_pt" name="nama_pt"
                         class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                        onchange="setKodePT()">
+                        onchange="setKodePT()" onchange="setAlamatPddikti()">
 
                         <datalist id="nama_pt_list">
                             <option value="Akademi Akuntansi Bandung"></option>
-                            <option value="Akademi Analisis Kesehatan An Nasher"></option>
+                            <option value="Akademi Analis Kesehatan An Nasher"></option>
                             <option value="Akademi Bahasa Asing Internasional Bandung"></option>
                             <option value="Akademi Farmasi Bumi Siliwangi Bandung"></option>
                             <option value="Akademi Farmasi Persada Sukabumi"></option>
@@ -499,6 +499,34 @@
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
 
+                    <script>
+    async function setAlamatPddikti() {
+        const namaPTInput = document.getElementById('nama_pt');
+        const alamatPddiktiInput = document.getElementById('alamat_pddikti');
+
+        // Mendapatkan alamat_pddikti berdasarkan nama PT dari pddikti atau sumber data lainnya
+        const alamatPddikti = await getAlamatPddiktiFromAPI(namaPTInput.value);
+
+        // Mengisi nilai alamat_pddikti pada input
+        alamatPddiktiInput.value = alamatPddikti;
+    }
+
+    async function getAlamatPddiktiFromAPI(namaPT) {
+        try {
+            // Lakukan permintaan ke API yang menyediakan data pddikti berdasarkan nama PT
+            const response = await fetch(`https://pddikti.kemdikbud.go.id/data_pt?nama_pt=${encodeURIComponent(namaPT)}`);
+            const data = await response.json();
+
+            // Mengembalikan alamat_pddikti dari data yang diperoleh
+            return data.alamat_pddikti;
+        } catch (error) {
+            console.error('Terjadi kesalahan dalam mendapatkan alamat_pddikti:', error);
+            // Mengembalikan nilai kosong jika terjadi kesalahan
+            return '';
+        }
+    }
+</script>
+
                     <div>
                         <label for="tanggal_monev"
                                class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal Monev</label>
@@ -507,17 +535,13 @@
                     </div>
                 </div>
 
-                <div>
-                    <label for="permasalahan" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
-                    <textarea id="permasalahan" name="permasalahan" rows="4"
-                              class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"></textarea>
-                </div>
+                
 
                 <div>
                     <label for="hasil_monev"
                            class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Monev</label>
-                    <input type="text" name="hasil_monev" id="hasil_monev"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                    <textarea name="hasil_monev" id="hasil_monev"
+                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"></textarea>
                 </div>
             </div>
             <!-- End Grid -->

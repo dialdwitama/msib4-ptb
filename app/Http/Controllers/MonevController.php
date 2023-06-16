@@ -26,7 +26,8 @@ final class MonevController extends Controller
                 $keyword = ucfirst($keyword);
 
                 $query->where('kode', 'like', "%{$keyword}%")
-                    ->orWhere('nama_pt', 'like', "%{$keyword}%");
+                    ->orWhere('nama_pt', 'like', "%{$keyword}%")
+                    ->orWhere('hasil_monev', 'like', "%{$keyword}%");
             })
             ->simplePaginate(10)
             ->withQueryString();
@@ -51,7 +52,7 @@ final class MonevController extends Controller
      */
     public function store(StoreMonevRequest $request)
     {
-        $request['permasalahan'] = trim($request->permasalahan, ',');
+        $request['hasil_monev'] = trim($request->hasil_monev, ',');
 
         Monev::query()
             ->create($request->validated());
