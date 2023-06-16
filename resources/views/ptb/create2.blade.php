@@ -1,7 +1,13 @@
+<head>
+    <title>
+        SIM | Tambah Data Detail Monev Khusus
+    </title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Tambahkan Data PTB
+            Tambahkan Data
         </h2>
     </x-slot>
 
@@ -14,7 +20,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                     <div>
                         <label for="tgl"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal PTB</label>
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Tanggal</label>
                         <input type="date" name="tgl" id="tgl"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>

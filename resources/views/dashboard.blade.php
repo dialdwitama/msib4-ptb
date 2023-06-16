@@ -8,7 +8,11 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">\
+    <title>
+        SIM | Dashboard
+    </title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <style>
@@ -22,6 +26,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     body {
         font-family: Verdana, sans-serif;
         background-color: #f2f2f2;
+        background-image: url('{{Vite::asset('resources/assets/images/blue.png')}}');
     }
 
     .container {
@@ -139,11 +144,10 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     }
 
     .widget.diktendik {
-        background-color: #1F8546;
+        background-color: #DAA520;
         margin-left: 20px;
     }
 </style>
-
 
 <x-app-layout>
     <x-slot name="header">
@@ -152,7 +156,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
         </h2>
     </x-slot>
 
-    <section>
+    <section style="background-image: url('{{Vite::asset('resources/assets/images/blue.png')}}'); background-size: cover;">
         <div class="widget-row">
             <div class="widget kelembagaan">
                     @isset($monevKelembagaanCount)
@@ -207,7 +211,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                                             class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
                                             <div>
                                                 <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                                                    Data Perguruan Tinggi Bermasalah
+                                                    Data Monev
                                                 </h2>
                                             </div>
                                             <div>

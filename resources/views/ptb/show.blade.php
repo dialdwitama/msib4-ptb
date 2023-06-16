@@ -1,3 +1,9 @@
+<head>
+    <title>
+        SIM | Detail Monev Khusus
+    </title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight bg-white">
@@ -14,10 +20,10 @@
                                 <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
                                     <div>
                                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                                            Detail Perguruan Tinggi Bermasalah
+                                            Detail Monev Khusus
                                         </h2>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">
-                                            Tambahkan, hapus, dan edit data PTB.
+                                            Tambahkan, hapus, dan edit detail monev khusus.
                                         </p>
                                     </div>
                                     <div class="mt-5 grid sm:flex gap-2">
@@ -26,7 +32,7 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
-                                                Tambahkan Detail PTB
+                                                Tambahkan Detail Monev Khusus
                                             </a>
                                         </div>
                                 </div>

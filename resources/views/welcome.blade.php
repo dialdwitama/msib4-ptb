@@ -11,16 +11,19 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <title>SI PTB</title>
+    <title>
+        SIM | Sistem Informasi Monev
+    </title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
 </head>
-<body class="antialiased flex flex-col">
+
+
+<body class="antialiased flex flex-col" style="background-image: url('{{Vite::asset('resources/assets/images/blue.png')}}');  background-size: cover;" >
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-blue-600 text-sm py-4">
     <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div class="flex items-center justify-between">
             <a class="flex-none text-xl font-semibold text-white" href="#">
-                Sistem Informasi PTB LLDIKTI4
+                
             </a>
             <div class="sm:hidden">
                 <button type="button"
@@ -43,7 +46,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
         <div id="navbar-primary"
              class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
             <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-                <a class="font-medium text-white" href="#" aria-current="page">Home</a>
+                <a class="font-medium text-white text-l" href="#" aria-current="page">Home</a>
                 @auth()
                     <a class="font-medium text-gray-300 hover:text-white" href="{{route('dashboard')}}">Dashboard</a>
                 @endauth
@@ -58,13 +61,13 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 <!-- Hero -->
 <!-- Hero -->
 <!-- Hero -->
-<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex justify-center mt-16">
+
+<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex justify-center mt-16" >
     <!-- Grid -->
     <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
         <div>
-            <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">Selamat datang di Website <span class="text-blue-600">SI - PTB</span></h1>
-            <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Sistem Informasi Perguruan Tinggi Bermasalah.</p>
-
+            <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-5xl lg:leading-tight dark:text-white">Selamat datang di <br><span class="text-blue-600">Sistem Informasi Monev</span></h1>
+    
             <!-- Buttons -->
             <div class="mt-7 grid gap-3 w-full sm:inline-flex">
                 <a class="inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-gray-800" href="{{route('login')}}">
@@ -79,10 +82,8 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
         <!-- End Col -->
 
         <div class="relative ml-4">
-            <img class="w-full rounded-md" src="{{Vite::asset('resources/assets/images/hero.jpg')}}" alt="Hero Image">
-            <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 mr-4 -ml-4 lg:mt-6 lg:-mb-6 lg:mr-6 lg:-ml-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
-
-            <!-- SVG-->
+            <img class="w-full rounded-md" src="{{Vite::asset('resources/assets/images/LOGO-SIM.png')}}" alt="Hero Image">
+            <!-- SVG
             <div class="absolute bottom-0 left-0">
                 <svg class="w-2/3 ml-auto h-auto text-white dark:text-slate-900" width="630" height="451" viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="531" y="352" width="99" height="99" fill="currentColor"/>
@@ -104,13 +105,14 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                     <rect x="531" y="49" width="99" height="99" fill="currentColor"/>
                 </svg>
             </div>
-            <!-- End SVG-->
+            End SVG -->
         </div>
         <!-- End Col -->
     </div>
     <!-- End Grid -->
 </div>
 <!-- End Hero -->
+
 
 
 <!--<div class="col-span-1 flex justify-center text-center">
