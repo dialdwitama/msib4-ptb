@@ -25,11 +25,8 @@ final class StoreDetailRequest extends FormRequest
     {
         return [
             'tgl' => 'required|date',
-            'permintaan' => 'required|string',
-            'kegiatan' => 'required|string',
             'hasil_keg' => 'required|string',
             'lampiran' => 'required|string',
-            'ket' => 'required|string',
         ];
     }
 }

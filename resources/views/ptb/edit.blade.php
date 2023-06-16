@@ -65,13 +65,60 @@
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
 
+                    <!-- edit.blade.php -->
                     <div>
-                        <label for="status"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
-                        <input type="type" name="status" id="status"
-                               value="{{$ptb->status}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                    </div>
+    <label for="status" class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
+    <select name="status" id="status" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+        <option value="Aman">Aman</option>
+        <option value="Menunggu Penggabungan">Menunggu Penggabungan</option>
+        <option value="Menunggu Pelaporan">Menunggu Pelaporan</option>
+        <option value="Sudah Kedaluwarsa">Sudah Kedaluwarsa</option>
+        <option value="Sedang Ditindaklanjuti">Sedang Ditindaklanjuti</option>
+        <option value="Tutup">Tutup</option>
+        <option value="other">Lainnya</option>
+    </select>
+</div>
+
+<script>
+    const statusSelect = document.getElementById('status');
+    const otherOption = document.querySelector('option[value="other"]');
+
+    statusSelect.addEventListener('change', function() {
+        if (statusSelect.value === 'other') {
+            const customStatus = prompt('Masukkan status kustom:');
+            if (customStatus) {
+                // Mengganti nilai dengan status kustom yang dimasukkan
+                otherOption.value = customStatus;
+                otherOption.text = customStatus;
+                statusSelect.value = customStatus;
+            } else {
+                // Jika pengguna membatalkan, kembali ke opsi sebelumnya
+                statusSelect.value = '';
+            }
+        }
+    });
+
+    // Mendapatkan nilai status dari variabel $ptb
+    const statusValue = "{{ $ptb->status }}";
+    
+    if (statusValue !== 'other') {
+        // Jika status bukan "Lainnya", tetapkan nilai status
+        statusSelect.value = statusValue;
+    } else {
+        // Jika status "Lainnya", tampilkan prompt untuk mengisi status kustom
+        const customStatus = prompt('Masukkan status kustom:', statusValue);
+        if (customStatus) {
+            // Mengganti nilai dengan status kustom yang dimasukkan
+            otherOption.value = customStatus;
+            otherOption.text = customStatus;
+            statusSelect.value = customStatus;
+        } else {
+            // Jika pengguna membatalkan, kembali ke opsi sebelumnya
+            statusSelect.value = '';
+        }
+    }
+</script>
+
                 </div>
 
                 <div>
@@ -90,7 +137,6 @@
                 </div>
             </div>
             <!-- End Grid -->
-
             <div class="mt-6 grid">
                 <button type="submit"
                         class="inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-gray-800">
@@ -98,7 +144,7 @@
                 </button>
             </div>
             <div class="mt-5">
-                <a href="{{route('ptbs.show', $ptb->id)}}"
+                <a href="{{ url()->previous() }}"
                    class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="w-2.5 h-auto">

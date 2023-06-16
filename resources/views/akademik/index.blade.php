@@ -190,7 +190,7 @@
                                                    href="{{route('akademiks.show', $akademik->id)}}">
                                                     <div class="px-6 py-2">
                                                         <p class="text-sm text-gray-500">
-                                                            {!! nl2br(e($akademik->permasalahan)) !!}
+                                                            {!! nl2br(e($akademik->hasil_monev)) !!}
                                                         </p>
                                                     </div>
                                                 </a>

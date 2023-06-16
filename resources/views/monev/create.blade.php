@@ -18,9 +18,8 @@
             <div class="grid gap-2 lg:gap-5">
                 <!-- Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-                
 
-                <div>
+                    <div>
                     <label for="nama_pt" class="block text-sm text-gray-700 font-medium dark:text-white">Nama PT</label>
                     <input list="nama_pt_list" id="nama_pt" name="nama_pt"
                         class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
@@ -473,16 +472,16 @@
                                 <option value="Universitas Yuppentek Indonesia">Universitas Yuppentek Indonesia</option>
                                 </datalist>
                     </div>
-
                     <div>
-                    <label for="kode" class="block text-sm text-gray-700 font-medium dark:text-white">Kode PT</label>
-                    <input type="text" id="kode" name="kode"
-                        class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
+                        <label for="kode"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Kode</label>
+                        <input type="text" name="kode" id="kode"
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                    </div>
                 </div>
-</div>
-<!-- End Grid -->
+                <!-- End Grid -->
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                     <div>
                         <label for="alamat_monev"
                                class="block text-sm text-gray-700 font-medium dark:text-white">Alamat Monev</label>
@@ -1010,7 +1009,3 @@
         document.getElementById("kode").value = kodePT;
     }
 </script>
-
-
-
-

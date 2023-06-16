@@ -38,7 +38,8 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/ptb/{id}/create2', [PtbController::class, 'create2'])->name('ptbs.create2');
     Route::post('/ptbs', [PtbController::class, 'store'])->name('ptbs.store');
     Route::post('/ptbs/{id}/store2', [PtbController::class, 'store2'])->name('ptbs.store2');
-    Route::get('/expore', [PtbController::class, 'exportToExcel']);
+    Route::get('/export-monevs', [MonevController::class, 'export'])->name('monevs.export');
+    Route::get('/export-ptbs', [PtbController::class, 'export'])->name('ptbs.export');
 });
 
 
