@@ -8,6 +8,8 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 final class DatabaseSeeder extends Seeder
 {
@@ -16,7 +18,12 @@ final class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::query()
+        $permission = Permission::create(['name' => 'add user']);
+        $role = Role::create(['name' => 'admin']);
+
+        $role->givePermissionTo($permission);
+
+        $user = User::query()
             ->create([
                 'name' => 'Admin',
                 'email' => 'admin@example.com',
@@ -24,6 +31,8 @@ final class DatabaseSeeder extends Seeder
                 'remember_token' => null,
                 'email_verified_at' => now(),
             ]);
+
+        $user->assignRole($role);
 
         $this->call([
             MonevSeeder::class,
