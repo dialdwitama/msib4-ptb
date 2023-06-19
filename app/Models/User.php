@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 final class User extends Authenticatable
 {
     use HasApiTokens;
     use HasUuids;
     use Notifiable;
+    use HasRoles;
 
     protected $fillable = [
         'name',
