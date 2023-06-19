@@ -156,14 +156,15 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-    
+
     'providers' => ServiceProvider::defaultProviders()->merge([
         /*
          * Package Service Providers...
          */
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
-        
+        \Spatie\Permission\PermissionServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
