@@ -1,9 +1,3 @@
-<?php
-// Mengambil data dari database dan mengisi variabel $ptbs
-$ptbs = \App\Models\PTB::all();
-// Mendefinisikan variabel $keyword
-$keyword = ''; // Atur nilai default sesuai kebutuhan Anda
-?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -23,7 +17,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div class="flex items-center justify-between">
             <a class="flex-none text-xl font-semibold text-white" href="#">
-                
+
             </a>
             <div class="sm:hidden">
                 <button type="button"
@@ -67,7 +61,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
     <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
         <div>
             <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-5xl lg:leading-tight dark:text-white">Selamat datang di <br><span class="text-blue-600">Sistem Informasi Monev</span></h1>
-    
+
             <!-- Buttons -->
             <div class="mt-7 grid gap-3 w-full sm:inline-flex">
                 <a class="inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-gray-800" href="{{route('login')}}">

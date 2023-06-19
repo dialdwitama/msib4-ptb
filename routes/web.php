@@ -13,10 +13,15 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => view('welcome'));
+Route::get('/', function () {
+    return view('welcome', [
+        'ptbs' => \App\Models\Ptb::all(),
+        'keyword' => ''
+    ]);
+});
 
 Route::middleware(['auth', 'verified'])->group(function (): void {
-    Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+    Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
 
 
     Route::resource('ptbs', PtbController::class);
@@ -24,7 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::resource('akademiks', AkademikController::class);
     Route::resource('diktendiks', DiktendikController::class);
     Route::resource('kemahasiswaans', KemahasiswaanController::class);
-    
+
 });
 
 Route::middleware('auth')->group(function (): void {
