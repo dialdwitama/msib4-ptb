@@ -47,6 +47,12 @@
                             Profile
                         </x-dropdown-link>
 
+                        @can('add user')
+                            <x-dropdown-link :href="route('admin.index')">
+                                Pengguna
+                            </x-dropdown-link>
+                        @endcan
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -96,6 +102,12 @@
                 <x-responsive-nav-link :href="route('profile.edit')">
                     Profile
                 </x-responsive-nav-link>
+
+                @can('add user')
+                    <x-responsive-nav-link :href="route('admin.index')">
+                        Pengguna
+                    </x-responsive-nav-link>
+                @endcan
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

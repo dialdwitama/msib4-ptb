@@ -5,13 +5,14 @@ declare(strict_types=1);
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MonevController;
 use App\Http\Controllers\PtbController;
-use App\Http\Controllers\DetailController;
 use App\Http\Controllers\AkademikController;
 use App\Http\Controllers\DiktendikController;
 use App\Http\Controllers\KemahasiswaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome', [
@@ -20,9 +21,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth', 'verified'])->group(function (): void {
+Route::middleware('auth')->group(function (): void {
     Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
-
 
     Route::resource('ptbs', PtbController::class);
     Route::resource('monevs', MonevController::class);
@@ -30,9 +30,6 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::resource('diktendiks', DiktendikController::class);
     Route::resource('kemahasiswaans', KemahasiswaanController::class);
 
-});
-
-Route::middleware('auth')->group(function (): void {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -45,6 +42,38 @@ Route::middleware('auth')->group(function (): void {
     Route::post('/ptbs/{id}/store2', [PtbController::class, 'store2'])->name('ptbs.store2');
     Route::get('/export-monevs', [MonevController::class, 'export'])->name('monevs.export');
     Route::get('/export-ptbs', [PtbController::class, 'export'])->name('ptbs.export');
+
+    Route::group(['middleware' => ['can:add user']], function () {
+        Route::get('/admin', function () {
+            $users = \App\Models\User::query()
+                ->get();
+            return view('admin.index', compact('users'));
+        })->name('admin.index');
+
+        Route::get('/admin/create', function () {
+            return view('admin.create');
+        })->name('admin.create');
+
+        Route::post('/admin', function (Request $request) {
+            $validated = $request->validate([
+                'name' => 'required|string|max:50',
+                'email' => 'required|unique:users,email',
+                'password' => 'required|confirmed|min:6'
+            ]);
+
+            $validated['password'] = Hash::make($validated['password']);
+
+            \App\Models\User::create($validated);
+
+            return redirect(\route('admin.index'));
+        })->name('admin.store');
+
+        Route::delete('/admin/{user}', function (User $user) {
+            $user->delete();
+
+            return redirect(\route('admin.index'));
+        })->name('admin.destroy');
+    });
 });
 
 
