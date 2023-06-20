@@ -483,8 +483,8 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
     <div>
-        <label for="progressTerakhir" class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
-        <input type="text" name="progressTerakhir" id="progressTerakhir" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+        <label for="pic" class="block text-sm text-gray-700 font-medium dark:text-white">PIC</label>
+        <input type="text" name="pic" id="pic" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
     </div>
     <div>
         <label for="status" class="block text-sm text-gray-700 font-medium dark:text-white">Status</label>
@@ -540,25 +540,12 @@
                 </div>
 
                 <div>
-                    <label for="permasalahan" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
-                    <textarea id="permasalahan" name="permasalahan" rows="4"
+                    <label for="progressTerakhir" class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
+                    <textarea id="progressTerakhir" name="progressTerakhir" rows="4"
                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"></textarea>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-                <div>
-                    <label for="progressReport"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Progress Report</label>
-                    <input type="text" name="progressReport" id="progressReport"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
-                <div>
-                    <label for="pic"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">PIC</label>
-                    <input type="text" name="pic" id="pic"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
-            </div>
+                
             <!-- End Grid -->
 
             <div class="mt-6 grid">

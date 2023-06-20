@@ -120,6 +120,13 @@
                                         </th>
 
                                         <th scope="col" class="px-6 py-3 text-left">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  Progress Terakhir
+                                            </span>
+                                        </th>
+
+                                        <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
                                                href="{{route('ptbs.index', ['sort' => 'tgl'])}}">
                                                 <span
@@ -168,12 +175,7 @@
                                                   Status
                                             </span>
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-left">
-                                            <span
-                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                  Keterangan
-                                            </span>
-                                        </th>
+                                        
                                         <th scope="col" class="px-9 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -217,6 +219,17 @@
                                                     </div>
                                                 </a>
                                             </td>
+                                            <td class="h-px w-72 min-w-[18rem]">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-4 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                          {!! nl2br(e($ptb->progressTerakhir)) !!}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
                                             <td class="h-px w-px whitespace-nowrap">
                                                 
                                                 <a class="block relative z-10"
@@ -228,7 +241,7 @@
                                             </td>
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10" href="{{ route('ptbs.show', $ptb->id) }}">
-                                                    <div class="px-6 py-2">
+                                                    <div class="px-8 py-2">
                                                         <span class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium
                                                             @if ($ptb->deadline < date('Y-m-d')) text-white bg-red-500
                                                             @elseif ($ptb->deadline <= date('Y-m-d', strtotime('+7 days'))) text-black bg-yellow-500
@@ -252,17 +265,7 @@
                                                     </div>
                                                 </a>
                                             </td>
-                                            <td class="h-px w-72 min-w-[18rem]">
-                                                <a class="block relative z-10"
-                                                   href="{{route('ptbs.show', $ptb->id)}}">
-                                                    <div class="px-6 py-2">
-                                                      <span
-                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                          {!! nl2br(e($ptb->permasalahan)) !!}
-                                                      </span>
-                                                    </div>
-                                                </a>
-                                            </td>
+                                            
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
                                                    href="{{route('ptbs.show', $ptb->id)}}">

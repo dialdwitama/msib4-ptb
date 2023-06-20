@@ -24,7 +24,8 @@
                                class="block text-sm text-gray-700 font-medium dark:text-white">Kode</label>
                         <input type="text" name="kode" id="kode"
                                value="{{$ptb->kode}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                               readonly >
                     </div>
 
                     <div>
@@ -48,10 +49,10 @@
                     </div>
 
                     <div>
-                        <label for="progressTerakhir"
-                               class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
-                        <input type="text" name="progressTerakhir" id="progressTerakhir"
-                               value="{{$ptb->progressTerakhir}}"
+                        <label for="deadline"
+                               class="block text-sm text-gray-700 font-medium dark:text-white">Deadline</label>
+                        <input type="date" name="deadline" id="deadline"
+                               value="{{$ptb->deadline}}"
                                class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     </div>
                 </div>
@@ -131,19 +132,11 @@
                 </div>
 
                 <div>
-                    <label for="pic" class="block text-sm text-gray-700 font-medium dark:text-white">PIC</label>
-                    <input type="type" name="pic" id="pic"
-                               value="{{$ptb->pic}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
+    <label for="progressTerakhir" class="block text-sm text-gray-700 font-medium dark:text-white">Progress Terakhir</label>
+    <textarea id="progressTerakhir" name="progressTerakhir" rows="4" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 whitespace-nowrap">{{ trim($ptb->progressTerakhir) }}</textarea>
+</div>
 
-                <div>
-                    <label for="progressReport"
-                           class="block text-sm text-gray-700 font-medium dark:text-white">Progress Report</label>
-                    <input type="text" name="progressReport" id="progressReport"
-                           value="{{$ptb->progressReport}}"
-                           class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                </div>
+                
             </div>
             <!-- End Grid -->
             <div class="mt-6 grid">

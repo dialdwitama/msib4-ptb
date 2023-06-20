@@ -12,15 +12,22 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')">
+                        Beranda
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('monevs.index')">
                         Monev Umum
                     </x-nav-link>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('ptbs.index')">
+                        @if(!Auth::user()->hasRole('monev-only'))
                             Monev Khusus
                         </x-nav-link>
                     </div>
                 </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->

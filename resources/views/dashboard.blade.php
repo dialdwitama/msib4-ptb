@@ -234,27 +234,28 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                                         </div>
                                         <!-- End Header -->
 
-                        <!-- Tabel -->
-                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                <thead class="bg-gray-50 dark:bg-slate-800">
+                                <!-- Tabel -->
+                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                    <thead class="bg-gray-50 dark:bg-slate-800">
                                     <tr>
-                                    <th scope="col" class="px-6 py-3 text-left">
-                                        <span
-                                            class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                No
-                                        </span>
-                                    </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  No
+                                            </span>
+                                        </th>
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                                href="">
-                                                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Kode
+                                               href="{{route('ptbs.index', ['sort' => 'kode'])}}">
+                                                <span
+                                                    class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  Kode
                                                 </span>
                                                 <div
                                                     class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
                                                     <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
-                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M7.55921 0.287451C7.86808 -0.0958171 8.40096 -0.0958167 8.70982 0.287451L12.9295 5.52367C13.3857 6.08979 13.031 7 12.3542 7H3.91488C3.23806 7 2.88336 6.08979 3.33957 5.52367L7.55921 0.287451Z"
                                                             fill="currentColor"/>
@@ -268,15 +269,15 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                                href="">
+                                               href="{{route('ptbs.index', ['sort' => 'pt'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Nama Perguruan Tinggi
+                                                  Nama Perguruan Tinggi
                                                 </span>
                                                 <div
                                                     class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
                                                     <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
-                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M7.55921 0.287451C7.86808 -0.0958171 8.40096 -0.0958167 8.70982 0.287451L12.9295 5.52367C13.3857 6.08979 13.031 7 12.3542 7H3.91488C3.23806 7 2.88336 6.08979 3.33957 5.52367L7.55921 0.287451Z"
                                                             fill="currentColor"/>
@@ -289,16 +290,23 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                                         </th>
 
                                         <th scope="col" class="px-6 py-3 text-left">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                  Progress Terakhir
+                                            </span>
+                                        </th>
+
+                                        <th scope="col" class="px-6 py-3 text-left">
                                             <a class="group inline-flex items-center gap-x-2"
-                                                href="">
+                                               href="{{route('ptbs.index', ['sort' => 'tgl'])}}">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Tanggal Progress Terakhir
+                                                  Tanggal Progress Terakhir
                                                 </span>
                                                 <div
                                                     class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
                                                     <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
-                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M7.55921 0.287451C7.86808 -0.0958171 8.40096 -0.0958167 8.70982 0.287451L12.9295 5.52367C13.3857 6.08979 13.031 7 12.3542 7H3.91488C3.23806 7 2.88336 6.08979 3.33957 5.52367L7.55921 0.287451Z"
                                                             fill="currentColor"/>
@@ -311,125 +319,185 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
                                         </th>
 
                                         <th scope="col" class="px-9 py-3 text-left">
+                                        <a class="group inline-flex items-center gap-x-2"
+                                        href="{{route('ptbs.index', ['sort' => 'deadline'])}}">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Deadline
+                                                  Deadline
                                             </span>
+                                            <div
+                                                    class="flex justify-center items-center w-5 h-5 border border-gray-200 group-hover:bg-gray-200 text-gray-400 rounded dark:border-gray-700 dark:group-hover:bg-gray-700 dark:text-gray-400">
+                                                    <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
+                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.55921 0.287451C7.86808 -0.0958171 8.40096 -0.0958167 8.70982 0.287451L12.9295 5.52367C13.3857 6.08979 13.031 7 12.3542 7H3.91488C3.23806 7 2.88336 6.08979 3.33957 5.52367L7.55921 0.287451Z"
+                                                            fill="currentColor"/>
+                                                        <path
+                                                            d="M8.70983 15.7125C8.40096 16.0958 7.86808 16.0958 7.55921 15.7125L3.33957 10.4763C2.88336 9.9102 3.23806 9 3.91488 9H12.3542C13.031 9 13.3857 9.9102 12.9295 10.4763L8.70983 15.7125Z"
+                                                            fill="currentColor"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Status
+                                                  Status
                                             </span>
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-left">
-                                            <span
-                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Permasalahan
-                                            </span>
-                                        </th>
+                                        
                                         <th scope="col" class="px-9 py-3 text-left">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    PIC
+                                                  PIC
                                             </span>
                                         </th>
+                                        <th scope="col" class="px-6 py-3 text-right"></th>
                                     </tr>
-                                </thead>
+                                    </thead>
 
-                                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700">
-                                @foreach($ptbs as $ptb)
-                                    <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
+                                    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                    @foreach($ptbs as $ptb)
+                                        <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-6 py-2">
+                                                        <div
+                                                            class="block text-sm dark:text-blue-500">
+                                                            {{$loop->iteration}}
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-4 py-2">
+                                                        <p class="textinline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{$ptb->kode}}</p>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-4 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->pt}}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-72 min-w-[18rem]">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-4 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                          {!! nl2br(e($ptb->progressTerakhir)) !!}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}"> 
+                                                    <div class="px-4 py-2">
+                                                        <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{\Carbon\Carbon::make($ptb->tgl)->toDateString()}}</p>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10" href="{{ route('ptbs.show', $ptb->id) }}">
+                                                    <div class="px-8 py-2">
+                                                        <span class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium
+                                                            @if ($ptb->deadline < date('Y-m-d')) text-white bg-red-500
+                                                            @elseif ($ptb->deadline <= date('Y-m-d', strtotime('+7 days'))) text-black bg-yellow-500
+                                                            @else text-gray-800 dark:bg-gray-900 dark:text-gray-200
+                                                            @endif">
+                                                            {{ $ptb->deadline }}
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+
+
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-5 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->status}}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            
+                                            <td class="h-px w-px whitespace-nowrap">
+                                                <a class="block relative z-10"
+                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                    <div class="px-6 py-2">
+                                                      <span
+                                                          class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+                                                        {{$ptb->pic}}
+                                                      </span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="h-px w-px whitespace-nowrap">
                                                 <div class="px-6 py-2">
                                                     <div
-                                                        class="block text-sm dark:text-blue-500">
-                                                        {{$loop->iteration}}
+                                                        class="hs-dropdown relative inline-block [--placement:bottom-right]">
+                                                        <button id="hs-table-dropdown-1" type="button"
+                                                                class="hs-dropdown-toggle py-1.5 px-2 inline-flex justify-center items-center gap-2 rounded-md text-gray-700 align-middle focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                                 width="16" height="16" fill="currentColor"
+                                                                 viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                            </svg>
+                                                        </button>
+                                                        <div
+                                                            class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mt-2 divide-y divide-gray-200 min-w-[10rem] z-20 bg-white shadow-2xl rounded-lg p-2 mt-2 dark:divide-gray-700 dark:bg-gray-800 dark:border dark:border-gray-700"
+                                                            aria-labelledby="hs-table-dropdown-1">
+                                                            <div class="py-2 first:pt-0 last:pb-0">
+                                                          <span
+                                                              class="block py-2 px-3 text-xs font-medium uppercase text-gray-400 dark:text-gray-600">
+                                                            Aksi
+                                                          </span>
+                                                                <a class="flex items-center gap-x-3 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                                                   href="{{route('ptbs.show', $ptb->id)}}">
+                                                                    Lihat
+                                                                </a>
+                                                                <a class="flex items-center gap-x-3 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                                                   href="{{route('ptbs.edit', $ptb->id)}}">
+                                                                    Edit
+                                                                </a>
+                                                            </div>
+                                                            <div class="py-2 first:pt-0 last:pb-0">
+                                                                <form action="{{route('ptbs.destroy', $ptb->id)}}"
+                                                                      method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                            class="flex w-full items-center gap-x-3 py-2 px-3 rounded-md text-sm text-red-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-red-500 dark:hover:bg-gray-700 dark:hover:text-gray-300">
+                                                                        Hapus
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </a>
-                                        </td>
-
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{$ptb->kode}}</p>
-                                                </div>
-                                            </a>
-                                        </td>
-
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <span
-                                                        class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                    {{$ptb->pt}}
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </td>
-
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">{{\Carbon\Carbon::make($ptb->tgl)->toDateString()}}</p>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <span
-                                                        class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                    {{$ptb->deadline}}
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <span
-                                                        class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                    {{$ptb->status}}
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td class="h-px w-72 min-w-[18rem]">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <p class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                        {!! nl2br(e($ptb->progressTerakhir)) !!}
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td class="h-px w-px whitespace-nowrap">
-                                            <a class="block relative z-10"
-                                                href="{{route('ptbs.show', $ptb->id)}}">
-                                                <div class="px-6 py-2">
-                                                    <span
-                                                        class="inline-flex items-center gap-1.5 py-1 px-2 text-xs font-medium text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-                                                    {{$ptb->pic}}
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
                                     @endforeach
-                            </tbody>
-                            </table>
-                        <!-- End Tabel -->
+                                    </tbody>
+                                </table>
+                                <!-- End Table -->
+                                
                         <!-- Footer -->
                         <div
                             class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-gray-700">

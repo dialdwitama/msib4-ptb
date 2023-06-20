@@ -20,9 +20,7 @@ return new class () extends Migration {
             $table->date('tgl');
             $table->date('deadline');
             $table->string('status');
-            $table->text('progressReport');
             $table->string('pic');
-            $table->text('permasalahan');
             $table->timestamps();
         });
     }

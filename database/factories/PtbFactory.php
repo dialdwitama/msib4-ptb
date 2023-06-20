@@ -23,9 +23,7 @@ class PtbFactory extends Factory
             'tgl' => $this->faker->date(),
             'deadline' => $this->faker->date(),
             'status' => $this->faker->word(),
-            'progressReport' => $this->faker->word(),
             'pic' => $this->faker->word(),
-            'permasalahan' => $this->faker->word(),
         ];
     }
 }
