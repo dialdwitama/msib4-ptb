@@ -17,7 +17,6 @@ return new class () extends Migration {
             $table->string('kode')->unique();
             $table->string('nama_pt');
             $table->date('tanggal_monev');
-            $table->text('permasalahan');
             $table->string('alamat_monev');
             $table->string('alamat_direktori');
             $table->string('alamat_pddikti');

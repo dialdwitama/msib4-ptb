@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use App\Models\User;
 
 final class DatabaseSeeder extends Seeder
 {
@@ -18,21 +17,26 @@ final class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $permission = Permission::create(['name' => 'add user']);
-        $role = Role::create(['name' => 'admin']);
+        $permissionAddUser = Permission::create(['name' => 'add user']);
+        $permissionAccessPtbs = Permission::firstOrCreate(['name' => 'access-ptbs']);
+        $permissionEditPtbs = Permission::firstOrCreate(['name' => 'edit-ptbs']);
+        $permissionAccessMonevs = Permission::firstOrCreate(['name' => 'access-monevs']);
+        $permissionEditMonevs = Permission::firstOrCreate(['name' => 'edit-monevs']);
+        
+        $roleAdmin = Role::create(['name' => 'admin']);
+        $roleAdmin->syncPermissions([$permissionAddUser, $permissionAccessPtbs, $permissionEditPtbs, $permissionAccessMonevs, $permissionEditMonevs]);
 
-        $role->givePermissionTo($permission);
+        $roleMonevOnly = Role::create(['name' => 'monev-only']);
+        $roleMonevOnly->syncPermissions([$permissionAccessMonevs, $permissionEditMonevs]);
 
-        $user = User::query()
-            ->create([
-                'name' => 'Admin',
-                'email' => 'admin@example.com',
-                'password' => Hash::make('admin'),
-                'remember_token' => null,
-                'email_verified_at' => now(),
-            ]);
-
-        $user->assignRole($role);
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('admin'),
+            'remember_token' => null,
+            'email_verified_at' => now(),
+        ]);
+        $user->assignRole($roleAdmin);
 
         $this->call([
             MonevSeeder::class,

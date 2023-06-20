@@ -76,17 +76,10 @@
                                 Hasil Monev
                             </p>
                             <p class="col-span-3">
-                                {{$monev->hasil_monev}}
+                                {!! nl2br (e($monev->hasil_monev)) !!}
                             </p>
                         </div>
-                        <div class="md:grid md:grid-cols-4 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                            <p class="text-gray-600 col-span-1">
-                                Permasalahan
-                            </p>
-                            <p class="col-span-3">
-                                {!! nl2br(e($monev->permasalahan)) !!}
-                            </p>
-                        </div>
+                        
                     </div>
                     <div class="p-4">
                         <a href="{{route('monevs.index')}}"

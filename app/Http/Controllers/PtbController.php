@@ -22,7 +22,7 @@ final class PtbController extends Controller
     {
         $ptbs = Ptb::query()
             ->when($request->input('sort'), function ($query, $sort): void {
-                $query->orderBy($sort, 'asc');
+                $query->orderBy($sort, 'desc');
             })
             ->when($request->input('keyword'), function ($query, $keyword): void {
                 $keyword = ucfirst($keyword);

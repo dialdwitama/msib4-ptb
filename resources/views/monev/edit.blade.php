@@ -24,7 +24,7 @@
                                class="block text-sm text-gray-700 font-medium dark:text-white">Kode</label>
                         <input type="text" name="kode" id="kode"
                                value="{{$monev->kode}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
                     </div>
 
                     <div>
@@ -32,7 +32,7 @@
                                class="block text-sm text-gray-700 font-medium dark:text-white">Nama PT</label>
                         <input type="text" name="nama_pt" id="nama_pt"
                                value="{{$monev->nama_pt}}"
-                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                               class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" readonly>
                     </div>
                 </div>
                 <!-- End Grid -->
@@ -74,12 +74,10 @@
                 </div>
 
                 <div>
-                    <label for="hasil_monev" class="block text-sm text-gray-700 font-medium dark:text-white">Permasalahan</label>
-                    <textarea id="hasil_monev" name="hasil_monev" rows="4"
-                              class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 whitespace-nowrap">
-                        {{ trim($monev->hasil_monev) }}
-                    </textarea>
-                </div>
+    <label for="hasil_monev" class="block text-sm text-gray-700 font-medium dark:text-white">Hasil Monev</label>
+    <textarea id="hasil_monev" name="hasil_monev" rows="4" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 whitespace-nowrap">{{ trim($monev->hasil_monev) }}</textarea>
+</div>
+
 
                 
             </div>

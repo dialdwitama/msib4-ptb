@@ -27,7 +27,6 @@ final class StoreMonevRequest extends FormRequest
             'kode' => ['required', 'string', 'max:255', 'unique:monevs,kode'],
             'nama_pt' => ['required', 'string', 'max:255'],
             'tanggal_monev' => ['required', 'date'],
-            'permasalahan' => ['required', 'string'],
             'alamat_monev' => ['required', 'string'],
             'alamat_direktori' => ['required', 'string'],
             'alamat_pddikti' => ['required', 'string'],

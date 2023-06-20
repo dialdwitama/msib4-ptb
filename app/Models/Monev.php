@@ -17,7 +17,6 @@ final class Monev extends Model
         'kode',
         'nama_pt',
         'tanggal_monev',
-        'permasalahan',
         'alamat_monev',
         'alamat_direktori',
         'alamat_pddikti',

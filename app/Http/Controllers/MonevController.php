@@ -52,10 +52,10 @@ final class MonevController extends Controller
      */
     public function store(StoreMonevRequest $request)
     {
-        $request['hasil_monev'] = trim($request->hasil_monev, ',');
+        $validatedData = $request->validated();
+        $validatedData['hasil_monev'] = trim($validatedData['hasil_monev']);
 
-        Monev::query()
-            ->create($request->validated());
+        Monev::create($validatedData);
 
         return redirect()->route('monevs.index')->with('success', 'Data monev berhasil ditambahkan.');
     }

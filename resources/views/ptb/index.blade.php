@@ -35,7 +35,11 @@
                                     </div>
 
                                     <div>
-                                        <div class="inline-flex gap-x-2">
+                                        <div class="inline-flex gap-x-2" style="height: 45px;">
+                                        <a href="{{ route('ptbs.export') }}"
+           class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+            Download Excel
+        </a>
                                             <div>
                                                 <div class="relative">
                                                     <form action="{{route('ptbs.index')}}" method="GET">
@@ -48,7 +52,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <a href="{{route('ptbs.create')}}"
                                                class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -449,13 +452,7 @@
         </div>
         <div>
         <!-- ... -->
-        <a href="{{ route('ptbs.export') }}"
-           class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Download Excel
-        </a>
+        
     </div>
     </div>
 </x-app-layout>

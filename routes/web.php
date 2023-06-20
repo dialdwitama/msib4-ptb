@@ -11,6 +11,8 @@ use App\Http\Controllers\KemahasiswaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -42,6 +44,12 @@ Route::middleware('auth')->group(function (): void {
     Route::post('/ptbs/{id}/store2', [PtbController::class, 'store2'])->name('ptbs.store2');
     Route::get('/export-monevs', [MonevController::class, 'export'])->name('monevs.export');
     Route::get('/export-ptbs', [PtbController::class, 'export'])->name('ptbs.export');
+    Route::resource('ptbs', PtbController::class)->middleware('can:access-ptbs');
+    Route::resource('monevs', MonevController::class)->middleware('can:access-monevs');
+    Route::resource('ptbs', PtbController::class)->middleware('can:edit-ptbs');
+Route::resource('monevs', MonevController::class)->middleware('can:edit-monevs');
+
+    // ...
 
     Route::group(['middleware' => ['can:add user']], function () {
         Route::get('/admin', function () {
@@ -58,15 +66,18 @@ Route::middleware('auth')->group(function (): void {
             $validated = $request->validate([
                 'name' => 'required|string|max:50',
                 'email' => 'required|unique:users,email',
-                'password' => 'required|confirmed|min:6'
+                'password' => 'required|confirmed|min:4'
             ]);
-
+        
             $validated['password'] = Hash::make($validated['password']);
-
-            \App\Models\User::create($validated);
-
+            $user = \App\Models\User::create($validated); // Define the $user variable
+        
+            $role = Role::findByName('monev-only');
+            $user->assignRole($role);
+        
             return redirect(\route('admin.index'));
         })->name('admin.store');
+        
 
         Route::delete('/admin/{user}', function (User $user) {
             $user->delete();

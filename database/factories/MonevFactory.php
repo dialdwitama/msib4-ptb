@@ -22,7 +22,6 @@ final class MonevFactory extends Factory
             'kode' => $this->faker->unique()->word(),
             'nama_pt' => $this->faker->word(),
             'tanggal_monev' => $this->faker->date(),
-            'permasalahan' => $this->faker->text(),
             'alamat_monev' => $this->faker->address(),
             'alamat_direktori' => $this->faker->address(),
             'alamat_pddikti' => $this->faker->address(),
