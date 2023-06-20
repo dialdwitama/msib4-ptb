@@ -358,7 +358,7 @@ $keyword = ''; // Atur nilai default sesuai kebutuhan Anda
 
                                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                     @foreach($ptbs as $ptb)
-                                        <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
+                                        <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800" pointer-events-none>
                                             <td class="h-px w-px whitespace-nowrap">
                                                 <a class="block relative z-10"
                                                    href="{{route('ptbs.show', $ptb->id)}}">
