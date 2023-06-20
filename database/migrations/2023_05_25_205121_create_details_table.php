@@ -17,14 +17,12 @@ return new class () extends Migration {
             $table->uuid('ptb_id');
             $table->foreign('ptb_id')->references('id')->on('ptbs')->onDelete('cascade');
             $table->date('tgl');
-            $table->string('permintaan');
-            $table->string('kegiatan');
             $table->string('hasil_keg');
-            $table->string('lampiran');
-            $table->string('ket');
+            $table->text('lampiran')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
