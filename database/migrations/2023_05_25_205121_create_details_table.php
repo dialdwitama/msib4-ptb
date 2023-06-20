@@ -19,9 +19,11 @@ return new class () extends Migration {
             $table->date('tgl');
             $table->string('hasil_keg');
             $table->string('lampiran');
+            $table->string('ket');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
